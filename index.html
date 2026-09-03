@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margo Creative Lab — создай то, чего ещё не существует</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Margo Creative Lab — лаборатория моды на стыке воображения и искусственного интеллекта. Курсы, воркшопы, наставничество.">
+<meta property="og:title" content="Margo Creative Lab — создай то, чего ещё не существует">
+<meta property="og:description" content="Лаборатория моды на стыке воображения и ИИ. Курсы, воркшопы, наставничество.">
+<meta property="og:image" content="images/hero-wide.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="preload" as="image" href="images/hero-wide.jpg">
+</head>
+<body>
+
+<a class="skip-link" href="#top">Перейти к содержимому</a>
+
+<header id="siteHeader">
+  <a href="#top" class="logo">
+    <div class="l1">MARGO</div>
+    <div class="l2">CREATIVE LAB</div>
+  </a>
+  <nav class="mainnav">
+    <a href="#manifesto" data-i18n="nav.lab">О лаборатории</a>
+    <a href="#lab" data-i18n="nav.programs">Программы</a>
+    <a href="#founder" data-i18n="nav.margo">О Марго</a>
+    <a href="#subscribe" data-i18n="nav.contacts">Контакты</a>
+  </nav>
+  <button type="button" class="burger" id="burgerBtn" aria-label="Меню" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <button type="button" class="close" id="mobileNavClose" data-i18n="nav.close">Закрыть</button>
+  <a href="#manifesto" data-i18n="nav.lab">О лаборатории</a>
+  <a href="#lab" data-i18n="nav.programs">Программы</a>
+  <a href="#founder" data-i18n="nav.margo">О Марго</a>
+  <a href="#subscribe" data-i18n="nav.contacts">Контакты</a>
+  <a href="#lab" class="btn btn-solid" data-i18n="nav.signup">Записаться</a>
+</div>
+
+<div id="scroll-progress" aria-hidden="true"></div>
+<button id="back-to-top" aria-label="Наверх" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<main id="top">
+
+  <section class="hero" style="padding:0;">
+    <div class="hero-photo">
+      <picture><source type="image/webp" srcset="images/hero-wide.webp"><img class="hero-base" src="images/hero-wide.jpg" alt="Margo Creative Lab — образ коллекции" fetchpriority="high" width="1920" height="1080"></picture>
+    </div>
+    <div class="hero-copy">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="ru" class="active">RU</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <span class="eyebrow">AI × Fashion × Creativity</span>
+      <h1>MARGO<span class="thin">CREATIVE LAB</span></h1>
+      <p class="hero-manifest" data-i18n="hero.manifest">Создай то, чего ещё не существует.</p>
+      <p class="hero-tagline" data-i18n="hero.tagline">Лаборатория моды на стыке воображения и искусственного интеллекта</p>
+      <div class="hero-actions">
+        <a href="#manifesto" class="btn btn-solid" data-i18n="hero.explore">Исследовать лабораторию</a>
+        <a href="#lab" class="btn btn-outline" data-i18n="hero.programs">Посмотреть программы</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto" id="manifesto">
+    <div class="wrap manifesto-inner">
+      <h2 data-i18n="manifesto.title">Новый язык моды</h2>
+      <p class="manifesto-lead" data-i18n="manifesto.lead">Технологии не заменяют творчество. Они расширяют границы возможного.</p>
+      <div class="manifesto-body">
+        <p data-i18n="manifesto.p1">Раньше идея упиралась в бюджет, производство и время. Эскиз оставался эскизом, потому что до коллекции — месяцы работы ателье. Margo Creative Lab меняет эту логику: с ИИ путь от образа в голове до готовой кампании занимает дни, а не сезоны.</p>
+        <p data-i18n="manifesto.p2">Ты не учишься «работать в нейросети» — ты учишься говорить с ней на языке моды: силуэт, ткань, свет, история.</p>
+        <p class="manifesto-micro" data-i18n="manifesto.micro">Если у тебя есть идея — у тебя уже есть коллекция. Просто она ещё не увидена.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="process.title">От идеи до создания</h2>
+      </div>
+      <div class="process-row">
+        <div class="p-step" data-reveal>
+          <span class="p-num">01</span>
+          <div class="p-title" data-i18n="process.1.title">Идея</div>
+          <p class="p-text" data-i18n="process.1.text">Интуиция. Всё начинается с образа, который пока живёт только в голове.</p>
+        </div>
+        <div class="p-step" data-reveal>
+          <span class="p-num">02</span>
+          <div class="p-title" data-i18n="process.2.title">Форма</div>
+          <p class="p-text" data-i18n="process.2.text">Придай ей форму. Опиши словами, приложи референс — и начни диалог с ИИ.</p>
+        </div>
+        <div class="p-step" data-reveal>
+          <span class="p-num">03</span>
+          <div class="p-title" data-i18n="process.3.title">ИИ</div>
+          <p class="p-text" data-i18n="process.3.text">Развивай и расширяй. Нейросеть предлагает вариации, ты выбираешь направление.</p>
+        </div>
+        <div class="p-step" data-reveal>
+          <span class="p-num">04</span>
+          <div class="p-title" data-i18n="process.4.title">Коллекция</div>
+          <p class="p-text" data-i18n="process.4.text">Создай целый мир. Один образ превращается в цельную линейку.</p>
+        </div>
+        <div class="p-step" data-reveal>
+          <span class="p-num">05</span>
+          <div class="p-title" data-i18n="process.5.title">Кампания</div>
+          <p class="p-text" data-i18n="process.5.text">Покажи её миру. Коллекция становится брендом.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="create">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="create.title">Что ты создашь?</h2>
+      </div>
+      <div class="create-grid">
+        <article class="create-card" data-reveal="scale">
+          <picture><source type="image/webp" srcset="images/create-design.webp"><img loading="lazy" decoding="async" src="images/create-design.jpg" alt="Дизайн — работа над эскизом у окна с видом на море"></picture>
+          <div class="content"><h3 data-i18n="create.design">Дизайн</h3></div>
+        </article>
+        <article class="create-card" data-reveal="scale">
+          <picture><source type="image/webp" srcset="images/create-atelier.webp"><img loading="lazy" decoding="async" src="images/create-atelier.jpg" alt="Ателье — светлая студия с манекенами"></picture>
+          <div class="content"><h3 data-i18n="create.atelier">Ателье</h3></div>
+        </article>
+        <article class="create-card" data-reveal="scale">
+          <picture><source type="image/webp" srcset="images/create-brand.webp"><img loading="lazy" decoding="async" src="images/create-brand.jpg" alt="Бренд — образ в кутюрном платье под каменной аркой"></picture>
+          <div class="content"><h3 data-i18n="create.brand">Бренд</h3></div>
+        </article>
+        <article class="create-card" data-reveal="scale">
+          <picture><source type="image/webp" srcset="images/create-creative.webp"><img loading="lazy" decoding="async" src="images/create-creative.jpg" alt="Креатив — скульптурный силуэт в классической архитектуре"></picture>
+          <div class="content"><h3 data-i18n="create.creative">Креатив</h3></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="lab" id="lab">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="lab.title">Лаборатория</h2>
+      </div>
+
+      <div class="format-grid">
+        <div class="format-card" data-reveal>
+          <svg class="format-icon" viewBox="0 0 34 34" fill="none" stroke="#241a12" stroke-width="1.2"><path d="M4 8 L17 3 L30 8 L17 13 Z"/><path d="M9 12 V24 C9 26 12 28 17 28 C22 28 25 26 25 24 V12"/></svg>
+          <h4 data-i18n="lab.courses">Курсы</h4>
+          <div class="sub" data-i18n="lab.learn">Учись</div>
+          <p data-i18n="lab.courses.text">Структурированный путь от первого промпта до готовой коллекции — пошагово, с обратной связью.</p>
+        </div>
+        <div class="format-card" data-reveal>
+          <svg class="format-icon" viewBox="0 0 34 34" fill="none" stroke="#241a12" stroke-width="1.2"><rect x="5" y="5" width="10" height="10"/><rect x="19" y="5" width="10" height="10"/><rect x="5" y="19" width="10" height="10"/><rect x="19" y="19" width="10" height="10"/></svg>
+          <h4 data-i18n="lab.workshops">Воркшопы</h4>
+          <div class="sub" data-i18n="lab.practice">Практикуй</div>
+          <p data-i18n="lab.workshops.text">Интенсивы на 1–2 дня: конкретный навык, конкретный результат уже к вечеру.</p>
+        </div>
+        <div class="format-card" data-reveal>
+          <svg class="format-icon" viewBox="0 0 34 34" fill="none" stroke="#241a12" stroke-width="1.2"><path d="M17 3 C21 8 21 12 17 17 C13 12 13 8 17 3 Z"/><path d="M17 17 V30"/><path d="M17 22 C12 22 8 26 8 30"/><path d="M17 22 C22 22 26 26 26 30"/></svg>
+          <h4 data-i18n="lab.mentor">Наставничество</h4>
+          <div class="sub" data-i18n="lab.grow">Расти</div>
+          <p data-i18n="lab.mentor.text">Персональное сопровождение проекта — от идеи до кампании рядом с Марго.</p>
+        </div>
+        <div class="format-card" data-reveal>
+          <svg class="format-icon" viewBox="0 0 34 34" fill="none" stroke="#241a12" stroke-width="1.2"><circle cx="17" cy="17" r="13"/></svg>
+          <h4 data-i18n="lab.exp">Эксперименты</h4>
+          <div class="sub" data-i18n="lab.create">Создавай</div>
+          <p data-i18n="lab.exp.text">Открытая площадка для тех, кто уже владеет инструментами и ищет новую форму.</p>
+        </div>
+      </div>
+
+      <div class="lab-detail">
+        <div class="accordion" id="labAccordion">
+          <div class="accordion-item open">
+            <button type="button" class="accordion-trig" aria-expanded="true"><span data-i18n="lab.acc.about">О программе</span><span class="plus"></span></button>
+            <div class="accordion-panel">
+              <p data-i18n="lab.acc.about.text">Margo Creative Lab — это не курс по нейросетям, а лаборатория, где мода и ИИ работают вместе. За основной интенсив ты пройдёшь путь от идеи до готовой рекламной кампании — тем же маршрутом, которым идут дизайнерские дома, только без бюджета на производство и студию.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trig" aria-expanded="false"><span data-i18n="lab.acc.req">Требования к участию</span><span class="plus"></span></button>
+            <div class="accordion-panel">
+              <p data-i18n="lab.acc.req.text">Опыт в дизайне не обязателен. Нужны: ноутбук, любопытство и готовность смотреть на моду не только как на вещь, но и как на историю. Базовое знакомство с любым графическим редактором — плюс, но не условие.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button type="button" class="accordion-trig" aria-expanded="false"><span data-i18n="lab.acc.format">Формат и длительность</span><span class="plus"></span></button>
+            <div class="accordion-panel">
+              <p data-i18n="lab.acc.format.text">Онлайн, живые созвоны и практика в своём темпе. Базовый интенсив — 5 дней, глубина модулей растёт от идеи к кампании.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-family:'Manrope',sans-serif;margin-bottom:8px;" data-i18n="lab.inside">Что внутри</h4>
+          <ul class="schedule" id="schedule">
+            <li>
+              <div class="sched-row">
+                <span class="sched-day" data-i18n="lab.day1">День 1</span>
+                <span class="sched-title" data-i18n="lab.day1.title">Погружение в ИИ как в материал</span>
+              </div>
+              <div class="sched-body"><p data-i18n="lab.day1.text">Разбираем инструменты не как софт, а как новый вид ткани — что он умеет, где сопротивляется, как с ним «шить».</p></div>
+            </li>
+            <li>
+              <div class="sched-row">
+                <span class="sched-day" data-i18n="lab.day2">День 2</span>
+                <span class="sched-title" data-i18n="lab.day2.title">От референса к силуэту</span>
+              </div>
+              <div class="sched-body"><p data-i18n="lab.day2.text">Собираем визуальный код будущей коллекции: настроение, цвет, форма.</p></div>
+            </li>
+            <li>
+              <div class="sched-row">
+                <span class="sched-day" data-i18n="lab.day3">День 3</span>
+                <span class="sched-title" data-i18n="lab.day3.title">Коллекция вместо одного образа</span>
+              </div>
+              <div class="sched-body"><p data-i18n="lab.day3.text">Расширяем находку в серию — принцип вариативности и цельности.</p></div>
+            </li>
+            <li>
+              <div class="sched-row">
+                <span class="sched-day" data-i18n="lab.day4">День 4</span>
+                <span class="sched-title" data-i18n="lab.day4.title">Бренд вокруг идеи</span>
+              </div>
+              <div class="sched-body"><p data-i18n="lab.day4.text">Название, айдентика, интонация — коллекция становится историей со своим голосом.</p></div>
+            </li>
+            <li>
+              <div class="sched-row">
+                <span class="sched-day" data-i18n="lab.day5">День 5</span>
+                <span class="sched-title" data-i18n="lab.day5.title">Кампания и презентация</span>
+              </div>
+              <div class="sched-body"><p data-i18n="lab.day5.text">Финальная съёмка, сборка кампании, показ работы миру.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="uniqueness">
+        <h4 style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-family:'Manrope',sans-serif;margin-bottom:24px;" data-i18n="lab.uniq">Уникальность программы</h4>
+        <ul class="uniqueness-grid">
+          <li data-i18n="lab.uniq.1">Работаешь над своим проектом, а не учебным упражнением</li>
+          <li data-i18n="lab.uniq.2">Ведёт практикующий креативный директор, а не преподаватель теории</li>
+          <li data-i18n="lab.uniq.3">Результат — не сертификат, а готовая кампания в портфолио</li>
+          <li data-i18n="lab.uniq.4">Разбор работ вживую, а не по шаблону</li>
+        </ul>
+      </div>
+
+      <div class="lab-cta">
+        <a href="#subscribe" class="btn btn-solid" data-i18n="lab.cta">Сообщить об открытии набора</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="campaign">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="campaign.title">От концепции до рекламной кампании</h2>
+      </div>
+      <div class="strip">
+        <div>
+          <div class="strip-card"><picture><source type="image/webp" srcset="images/strip-01.webp"><img loading="lazy" decoding="async" src="images/strip-01.jpg" alt="Эскиз вечернего платья"></picture></div>
+          <div class="strip-cap"><b>01</b><span data-i18n="process.1.title">Идея</span></div>
+        </div>
+        <div>
+          <div class="strip-card"><picture><source type="image/webp" srcset="images/strip-02.webp"><img loading="lazy" decoding="async" src="images/strip-02.jpg" alt="Работа над концепцией и мудбордом"></picture></div>
+          <div class="strip-cap"><b>02</b><span data-i18n="campaign.2">Концепция</span></div>
+        </div>
+        <div>
+          <div class="strip-card"><picture><source type="image/webp" srcset="images/strip-03.webp"><img loading="lazy" decoding="async" src="images/strip-03.jpg" alt="Крупный план образа"></picture></div>
+          <div class="strip-cap"><b>03</b><span data-i18n="campaign.3">Образ</span></div>
+        </div>
+        <div>
+          <div class="strip-card"><picture><source type="image/webp" srcset="images/strip-04.webp"><img loading="lazy" decoding="async" src="images/strip-04.jpg" alt="Показ коллекции на подиуме"></picture></div>
+          <div class="strip-cap"><b>04</b><span data-i18n="process.4.title">Коллекция</span></div>
+        </div>
+        <div>
+          <div class="strip-card"><picture><source type="image/webp" srcset="images/strip-05.webp"><img loading="lazy" decoding="async" src="images/strip-05.jpg" alt="Кампания в дворцовом зале"></picture></div>
+          <div class="strip-cap"><b>05</b><span data-i18n="process.5.title">Кампания</span></div>
+        </div>
+        <div>
+          <div class="strip-card"><picture><source type="image/webp" srcset="images/strip-06.webp"><img loading="lazy" decoding="async" src="images/strip-06.jpg" alt="История бренда в роскошном интерьере"></picture></div>
+          <div class="strip-cap"><b>06</b><span data-i18n="campaign.6">История</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder" id="founder">
+    <div class="wrap founder-grid">
+      <div class="founder-portrait" data-reveal="left">
+        <picture><source type="image/webp" srcset="images/margo.webp"><img loading="lazy" decoding="async" src="images/margo.jpg" alt="Марго — основатель Creative Lab"></picture>
+      </div>
+      <div class="founder-copy" data-reveal="right">
+        <span class="eyebrow" data-i18n="nav.margo">О Марго</span>
+        <h2 data-i18n="founder.title">Креативный директор и основатель лаборатории</h2>
+        <p data-i18n="founder.p1">Марго работает на стыке моды и генеративных технологий: от индивидуальных капсульных коллекций до рекламных кампаний, полностью собранных при помощи ИИ.</p>
+        <p data-i18n="founder.p2">Верит, что нейросеть — не замена дизайнеру, а новый инструмент в его руках, такой же, как когда-то стала швейная машина.</p>
+        <div class="founder-quote" data-i18n="founder.quote">«Технологии не спрашивают, есть ли у тебя ателье. Они спрашивают, есть ли у тебя идея.»</div>
+        <a href="https://t.me/MarinaTopalo" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-i18n="founder.write">Написать Марго</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="works">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="works.title">Работы лаборатории</h2>
+        <p class="lead" data-i18n="works.lead">Коллекции, кампании и бренды, рождённые в Margo Creative Lab.</p>
+      </div>
+      <div class="works-grid">
+        <article class="work-card" data-reveal="scale">
+          <div class="work-thumb"><picture><source type="image/webp" srcset="images/create-brand.webp"><img loading="lazy" decoding="async" src="images/create-brand.jpg" alt="Silhouette / Prisma"></picture></div>
+          <div class="work-meta"><span class="name">Silhouette / Prisma</span><span class="fmt" data-i18n="works.course">Курс</span></div>
+        </article>
+        <article class="work-card" data-reveal="scale">
+          <div class="work-thumb"><picture><source type="image/webp" srcset="images/create-creative.webp"><img loading="lazy" decoding="async" src="images/create-creative.jpg" alt="Nocturne Capsule"></picture></div>
+          <div class="work-meta"><span class="name">Nocturne Capsule</span><span class="fmt" data-i18n="lab.mentor">Наставничество</span></div>
+        </article>
+        <article class="work-card" data-reveal="scale">
+          <div class="work-thumb"><picture><source type="image/webp" srcset="images/create-atelier.webp"><img loading="lazy" decoding="async" src="images/create-atelier.jpg" alt="Terra Alta"></picture></div>
+          <div class="work-meta"><span class="name">Terra Alta</span><span class="fmt" data-i18n="works.workshop">Воркшоп</span></div>
+        </article>
+        <article class="work-card" data-reveal="scale">
+          <div class="work-thumb"><picture><source type="image/webp" srcset="images/hero.webp"><img loading="lazy" decoding="async" src="images/hero.jpg" alt="Glass Bloom"></picture></div>
+          <div class="work-meta"><span class="name">Glass Bloom</span><span class="fmt" data-i18n="works.course">Курс</span></div>
+        </article>
+        <article class="work-card" data-reveal="scale">
+          <div class="work-thumb"><picture><source type="image/webp" srcset="images/margo-portrait.webp"><img loading="lazy" decoding="async" src="images/margo-portrait.jpg" alt="Dune Reverie"></picture></div>
+          <div class="work-meta"><span class="name">Dune Reverie</span><span class="fmt" data-i18n="works.experiment">Эксперимент</span></div>
+        </article>
+        <article class="work-card" data-reveal="scale">
+          <div class="work-thumb"><picture><source type="image/webp" srcset="images/create-design.webp"><img loading="lazy" decoding="async" src="images/create-design.jpg" alt="Verre & Voile"></picture></div>
+          <div class="work-meta"><span class="name">Verre &amp; Voile</span><span class="fmt" data-i18n="lab.mentor">Наставничество</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="faq.title">Остались вопросы?</h2>
+      </div>
+      <div class="faq-wrap" id="faqList">
+        <div class="faq-item open">
+          <button type="button" class="faq-trig" aria-expanded="true"><span data-i18n="faq.q1">Нужен ли опыт в дизайне или ИИ?</span><span class="plus"></span></button>
+          <div class="faq-panel"><p data-i18n="faq.a1">Нет. Часть участников приходит из моды, часть — из технологий. Программа строится так, чтобы обе стороны говорили на одном языке уже к третьему дню.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-trig" aria-expanded="false"><span data-i18n="faq.q2">Какие инструменты понадобятся?</span><span class="plus"></span></button>
+          <div class="faq-panel"><p data-i18n="faq.a2">Ноутбук и доступ в интернет. Список конкретных сервисов и как их подключить — присылаем после записи.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-trig" aria-expanded="false"><span data-i18n="faq.q3">Это про генерацию картинок или про реальный продукт?</span><span class="plus"></span></button>
+          <div class="faq-panel"><p data-i18n="faq.a3">Про продукт. Картинка — только первый шаг; цель — собранная кампания или коллекция, которую можно показывать.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-trig" aria-expanded="false"><span data-i18n="faq.q4">Можно ли прийти со своим проектом?</span><span class="plus"></span></button>
+          <div class="faq-panel"><p data-i18n="faq.a4">Да, особенно на форматы «Наставничество» и «Эксперименты» — они строятся вокруг твоей идеи.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="side-img left">
+      <picture><source type="image/webp" srcset="images/hero.webp"><img loading="lazy" decoding="async" src="images/hero.jpg" alt=""></picture>
+    </div>
+    <div class="side-img right">
+      <picture><source type="image/webp" srcset="images/cta-arch.webp"><img loading="lazy" decoding="async" src="images/cta-arch.jpg" alt=""></picture>
+    </div>
+    <div class="wrap">
+      <h2 data-i18n="cta.title">Создай то, чего ещё не существует.</h2>
+      <p class="lead" data-i18n="cta.lead">Преврати своё воображение в реальность.</p>
+      <a href="#subscribe" class="btn btn-solid" data-i18n="cta.btn">Войди в мир будущего с Марго</a>
+    </div>
+  </section>
+
+  <section class="subscribe" id="subscribe">
+    <div class="wrap sub-grid">
+      <div>
+        <h2 data-i18n="sub.title">Будь в курсе лаборатории</h2>
+        <p class="lead" data-i18n="sub.lead">Даты новых потоков, открытые эксперименты и работы участников — раз в одну-две недели, без спама.</p>
+      </div>
+      <form class="sub-form" id="subForm" novalidate>
+        <div class="sub-row">
+          <input type="email" name="email" autocomplete="email" placeholder="Ваш e-mail" data-i18n-placeholder="sub.email" required>
+          <button type="submit" data-i18n="sub.btn">Подписаться</button>
+        </div>
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          <span data-i18n="sub.consent">Согласен(на) с обработкой персональных данных</span>
+        </label>
+        <p class="sub-error" id="subError" data-i18n="sub.error">Укажите корректный e-mail и подтвердите согласие.</p>
+        <p class="sub-success" id="subSuccess" data-i18n="sub.ok">Откроется почтовый клиент. Отправьте письмо — и мы добавим вас в список ближайшего потока.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-logo logo">
+        <div class="l1">MARGO</div>
+        <div class="l2">CREATIVE LAB</div>
+      </div>
+      <nav class="foot-nav">
+        <a href="#manifesto" data-i18n="nav.lab">О лаборатории</a>
+        <a href="#lab" data-i18n="nav.programs">Программы</a>
+        <a href="#founder" data-i18n="nav.margo">О Марго</a>
+        <a href="#subscribe" data-i18n="nav.contacts">Контакты</a>
+      </nav>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/p/DcUAbpuje_k/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbbca9" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+        <a href="https://t.me/MargoCreativeCommunity" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbbca9" stroke-width="1.4"><path d="M21 4 L3 11.5 L10 13.5 L12.5 20.5 L15 15 L21 4Z"/><path d="M10 13.5 L21 4"/></svg></a>
+        <a href="mailto:hello@margocreativelab.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbbca9" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6 L12 13 L21 6"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Margo Creative Lab</span>
+      <span data-i18n="footer.place">Frankfurt am Main · онлайн по всему миру</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
