@@ -125,38 +125,6 @@ document.querySelectorAll('#schedule li').forEach(li => {
   });
 });
 
-const subForm = document.getElementById('subForm');
-if(subForm){
-  subForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    const emailInput = this.querySelector('input[type=email]');
-    const consent = this.querySelector('input[name=consent]');
-    const errorEl = document.getElementById('subError');
-    const email = emailInput ? emailInput.value.trim() : '';
-    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    if(!validEmail || !consent || !consent.checked){
-      if(errorEl) errorEl.classList.add('is-visible');
-      return;
-    }
-    if(errorEl) errorEl.classList.remove('is-visible');
-    const subject = encodeURIComponent('Subscribe — Margo Creative Lab');
-    const body = encodeURIComponent('Please add this email to the lab list:\n\n' + email);
-    const mail = document.createElement('a');
-    mail.href = 'mailto:hello@margocreativelab.com?subject=' + subject + '&body=' + body;
-    mail.rel = 'noopener';
-    mail.style.display = 'none';
-    document.body.appendChild(mail);
-    mail.click();
-    mail.remove();
-    const row = this.querySelector('.sub-row');
-    const consentLabel = this.querySelector('.consent');
-    if(row) row.style.display = 'none';
-    if(consentLabel) consentLabel.style.display = 'none';
-    const ok = document.getElementById('subSuccess');
-    if(ok) ok.style.display = 'block';
-  });
-}
-
 const I18N = {
   ru: {
     'nav.lab': 'О лаборатории',
@@ -164,11 +132,61 @@ const I18N = {
     'nav.margo': 'О Марго',
     'nav.contacts': 'Контакты',
     'nav.signup': 'Записаться',
+    'nav.free': 'Начать бесплатно',
+    'nav.mentors': 'Менторы',
     'nav.close': 'Закрыть',
-    'hero.manifest': 'Создай то, чего ещё не существует.',
-    'hero.tagline': 'Лаборатория моды на стыке воображения и искусственного интеллекта',
-    'hero.explore': 'Исследовать лабораторию',
+    'hero.eyebrow': 'AI × Fashion × Business',
+    'hero.manifest': 'Практические инструменты для дизайнеров, владельцев ателье и небольших fashion-брендов.',
+    'hero.tagline': 'От первой идеи и AI-визуализации до продвижения и построения собственного fashion-бизнеса.',
+    'hero.free': 'Начать бесплатно',
     'hero.programs': 'Посмотреть программы',
+    'products.eyebrow': 'Создай · Упакуй · Построй бизнес',
+    'products.title': 'Три уровня погружения',
+    'products.lead': 'Начни с бесплатного гида, доведи одну коллекцию до полноценной кампании и построй свой fashion-бизнес.',
+    'products.result': 'Результат',
+    'products.free.badge': 'FREE',
+    'products.free.title': 'Создай свою первую мини-коллекцию с помощью ИИ',
+    'products.free.sub': 'Как из одной идеи создать 5 связанных между собой fashion-образов.',
+    'products.free.li1': 'Поиск идеи и концепции',
+    'products.free.li2': 'Разработка направления',
+    'products.free.li3': 'AI prompts для дизайнера',
+    'products.free.li4': 'Создание fashion-образов',
+    'products.free.li5': 'Сборка первой мини-коллекции',
+    'products.free.result': 'Первая AI mini collection и понимание, как использовать AI как инструмент дизайнера.',
+    'products.free.note': '* Для получения бесплатных материалов в Telegram-боте напишите слово <b>GUIDE</b>.',
+    'products.free.cta': 'Получить бесплатно',
+    'products.paid.badge': '$19',
+    'products.paid.title': 'Одно платье — целая рекламная кампания',
+    'products.paid.sub': 'Как из одного дизайна собрать визуалы, контент и готовую презентацию продукта.',
+    'products.paid.li1': 'AI-модель на основе твоего дизайна',
+    'products.paid.li2': 'Разные ракурсы одного образа',
+    'products.paid.li3': 'Campaign images для бренда',
+    'products.paid.li4': 'Social-media content',
+    'products.paid.li5': 'Готовая fashion-история продукта',
+    'products.paid.result': 'Один дизайн превращается в полноценную campaign concept.',
+    'products.paid.cta': 'Создать свою кампанию',
+    'products.program.badge': '$199',
+    'products.program.title': 'Как построить своё fashion-ателье',
+    'products.program.sub': 'Полная система запуска fashion-бизнеса — пять модулей от идеи до продаж.',
+    'products.program.m1': 'Идея',
+    'products.program.m1.sub': 'концепция, ниша, стиль',
+    'products.program.m2': 'Позиционирование',
+    'products.program.m2.sub': 'бренд, аудитория, отличие',
+    'products.program.m3': 'Услуги',
+    'products.program.m3.sub': 'продуктовая линейка, цены, формат',
+    'products.program.m4': 'Процессы',
+    'products.program.m4.sub': 'производство, организация, управление',
+    'products.program.m5': 'Продвижение',
+    'products.program.m5.sub': 'контент, продажи, маркетинг',
+    'products.program.result': 'Готовая система запуска своего fashion-ателье.',
+    'products.program.cta': 'Join Program',
+    'community.eyebrow': 'Telegram MARGO Creative Lab',
+    'community.title': 'Хотите больше практических материалов по AI, Fashion и Business?',
+    'community.li1': 'AI-инструменты и практические уроки',
+    'community.li2': 'Fashion-кейсы и разборы',
+    'community.li3': 'Идеи для коллекций',
+    'community.li4': 'Новости и анонсы новых продуктов',
+    'community.cta': 'Присоединиться к Telegram',
     'manifesto.title': 'Новый язык моды',
     'manifesto.lead': 'Технологии не заменяют творчество. Они расширяют границы возможного.',
     'manifesto.p1': 'Раньше идея упиралась в бюджет, производство и время. Эскиз оставался эскизом, потому что до коллекции — месяцы работы ателье. Margo Creative Lab меняет эту логику: с ИИ путь от образа в голове до готовой кампании занимает дни, а не сезоны.',
@@ -233,7 +251,32 @@ const I18N = {
     'founder.p1': 'Марго работает на стыке моды и генеративных технологий: от индивидуальных капсульных коллекций до рекламных кампаний, полностью собранных при помощи ИИ.',
     'founder.p2': 'Верит, что нейросеть — не замена дизайнеру, а новый инструмент в его руках, такой же, как когда-то стала швейная машина.',
     'founder.quote': '«Технологии не спрашивают, есть ли у тебя ателье. Они спрашивают, есть ли у тебя идея.»',
-    'founder.write': 'Написать Марго',
+    'mentors.eyebrow': 'Команда MARGO Creative Lab',
+    'mentors.title': 'Менторы программы',
+    'mentors.lead': 'Четыре взгляда на fashion-бизнес: стратегия, маркетинг, креатив и предпринимательский опыт.',
+    'mentors.kicker': 'Mentor',
+    'mentors.margo.role': 'Founder & Fashion Business Mentor',
+    'mentors.margo.text': 'Видение проекта, fashion-бизнес, стратегия, предпринимательский опыт и общая методология MARGO Creative Lab.',
+    'mentors.kendra.role': 'Business Strategy Mentor',
+    'mentors.kendra.text': 'Бизнес-модель, позиционирование, структура, рост, продажи и коммерческая логика.',
+    'mentors.ava.role': 'Marketing & Content Mentor',
+    'mentors.ava.text': 'Контент-стратегия, продвижение, social media, AI-инструменты для маркетинга и коммуникация с аудиторией.',
+    'mentors.leya.role': 'Creativity & Brand Mentor',
+    'mentors.leya.text': 'Креативная концепция, бренд, визуальная идея, storytelling, коллекции и подача продукта.',
+    'reviews.eyebrow': 'Отзывы',
+    'reviews.title': 'Что говорят участницы лаборатории',
+    'reviews.1.text': '«За пять дней от идеи в голове дошла до готовой кампании — раньше это заняло бы у меня сезон. AI перестал казаться чем-то отдельным, стал частью работы.»',
+    'reviews.1.name': 'Ирина К.',
+    'reviews.1.role': 'Дизайнер, свой ателье-бренд',
+    'reviews.2.text': '«Купила продукт за $19 и получила ясный алгоритм: один дизайн → визуалы → соцсети. Через две недели запустила первую кампанию.»',
+    'reviews.2.name': 'Аня М.',
+    'reviews.2.role': 'Основательница fashion-бренда',
+    'reviews.3.text': '«Программа $199 — это не курс, а система запуска. Ниша, позиционирование, продвижение — по каждому модулю уходишь с готовым решением.»',
+    'reviews.3.name': 'Полина В.',
+    'reviews.3.role': 'Владелица ателье в Берлине',
+    'youtube.label': 'YouTube MARGO Creative Lab',
+    'youtube.title': 'Смотрите бесплатные уроки и разборы',
+    'youtube.cta': 'Смотреть на YouTube',
     'works.title': 'Работы лаборатории',
     'works.lead': 'Коллекции, кампании и бренды, рождённые в Margo Creative Lab.',
     'works.course': 'Курс',
@@ -256,14 +299,8 @@ const I18N = {
     'faq.a4': 'Да, особенно на форматы «Наставничество» и «Эксперименты» — они строятся вокруг твоей идеи.',
     'cta.title': 'Создай то, чего ещё не существует.',
     'cta.lead': 'Преврати своё воображение в реальность.',
-    'cta.btn': 'Войди в мир будущего с Марго',
-    'sub.title': 'Будь в курсе лаборатории',
-    'sub.lead': 'Даты новых потоков, открытые эксперименты и работы участников — раз в одну-две недели, без спама.',
-    'sub.email': 'Ваш e-mail',
-    'sub.btn': 'Подписаться',
-    'sub.consent': 'Согласен(на) с обработкой персональных данных',
-    'sub.ok': 'Откроется почтовый клиент. Отправьте письмо — и мы добавим вас в список ближайшего потока.',
-    'sub.error': 'Укажите корректный e-mail и подтвердите согласие.',
+    'cta.btn': 'Смотреть программы',
+    'footer.channels': 'Все каналы MARGO Creative Lab',
     'footer.place': 'Frankfurt am Main · онлайн по всему миру'
   },
   en: {
@@ -272,11 +309,61 @@ const I18N = {
     'nav.margo': 'About Margo',
     'nav.contacts': 'Contacts',
     'nav.signup': 'Join',
+    'nav.free': 'Start for free',
+    'nav.mentors': 'Mentors',
     'nav.close': 'Close',
-    'hero.manifest': 'Create what does not yet exist.',
-    'hero.tagline': 'A fashion laboratory at the intersection of imagination and artificial intelligence',
-    'hero.explore': 'Explore the laboratory',
+    'hero.eyebrow': 'AI × Fashion × Business',
+    'hero.manifest': 'Practical tools for designers, atelier owners and small fashion brands.',
+    'hero.tagline': 'From the first idea and AI visualisation to promotion and building your own fashion business.',
+    'hero.free': 'Start for free',
     'hero.programs': 'View programs',
+    'products.eyebrow': 'Create · Package · Build a business',
+    'products.title': 'Three levels of depth',
+    'products.lead': 'Start with a free guide, turn one collection into a full campaign, and build your own fashion business.',
+    'products.result': 'Outcome',
+    'products.free.badge': 'FREE',
+    'products.free.title': 'Create your first AI mini-collection',
+    'products.free.sub': 'How to grow one idea into 5 connected fashion looks.',
+    'products.free.li1': 'Finding the idea and concept',
+    'products.free.li2': 'Developing the direction',
+    'products.free.li3': 'AI prompts for the designer',
+    'products.free.li4': 'Creating fashion looks',
+    'products.free.li5': 'Assembling your first mini-collection',
+    'products.free.result': 'Your first AI mini collection and a clear understanding of AI as a designer’s tool.',
+    'products.free.note': '* To get the free materials, send the word <b>GUIDE</b> to the Telegram bot.',
+    'products.free.cta': 'Get it free',
+    'products.paid.badge': '$19',
+    'products.paid.title': 'One dress — a whole campaign',
+    'products.paid.sub': 'How to turn one design into visuals, content and a ready product presentation.',
+    'products.paid.li1': 'AI model from your own design',
+    'products.paid.li2': 'Different angles of one look',
+    'products.paid.li3': 'Campaign images for the brand',
+    'products.paid.li4': 'Social-media content',
+    'products.paid.li5': 'A finished fashion story around the product',
+    'products.paid.result': 'One design becomes a full campaign concept.',
+    'products.paid.cta': 'Create your campaign',
+    'products.program.badge': '$199',
+    'products.program.title': 'How to launch your own fashion atelier',
+    'products.program.sub': 'A complete system for launching a fashion business — five modules from idea to sales.',
+    'products.program.m1': 'Idea',
+    'products.program.m1.sub': 'concept, niche, style',
+    'products.program.m2': 'Positioning',
+    'products.program.m2.sub': 'brand, audience, distinction',
+    'products.program.m3': 'Services',
+    'products.program.m3.sub': 'product line, pricing, format',
+    'products.program.m4': 'Operations',
+    'products.program.m4.sub': 'production, organisation, management',
+    'products.program.m5': 'Promotion',
+    'products.program.m5.sub': 'content, sales, marketing',
+    'products.program.result': 'A ready system for launching your fashion atelier.',
+    'products.program.cta': 'Join Program',
+    'community.eyebrow': 'Telegram MARGO Creative Lab',
+    'community.title': 'Want more practical materials on AI, Fashion and Business?',
+    'community.li1': 'AI tools and practical lessons',
+    'community.li2': 'Fashion cases and breakdowns',
+    'community.li3': 'Ideas for collections',
+    'community.li4': 'News and announcements of new products',
+    'community.cta': 'Join on Telegram',
     'manifesto.title': 'A new language of fashion',
     'manifesto.lead': 'Technology does not replace creativity. It expands the boundaries of the possible.',
     'manifesto.p1': 'An idea used to stall at budget, production and time. A sketch stayed a sketch because a collection meant months in an atelier. Margo Creative Lab changes that logic: with AI, the path from an image in your mind to a finished campaign takes days, not seasons.',
@@ -341,7 +428,32 @@ const I18N = {
     'founder.p1': 'Margo works at the intersection of fashion and generative technology: from capsule collections to advertising campaigns assembled with AI.',
     'founder.p2': 'She believes a neural network is not a replacement for the designer, but a new tool in their hands — just as the sewing machine once was.',
     'founder.quote': '“Technology does not ask whether you have an atelier. It asks whether you have an idea.”',
-    'founder.write': 'Write to Margo',
+    'mentors.eyebrow': 'MARGO Creative Lab team',
+    'mentors.title': 'Program mentors',
+    'mentors.lead': 'Four views on the fashion business: strategy, marketing, creative and entrepreneurial experience.',
+    'mentors.kicker': 'Mentor',
+    'mentors.margo.role': 'Founder & Fashion Business Mentor',
+    'mentors.margo.text': 'Project vision, fashion business, strategy, entrepreneurial experience and the overall methodology of MARGO Creative Lab.',
+    'mentors.kendra.role': 'Business Strategy Mentor',
+    'mentors.kendra.text': 'Business model, positioning, structure, growth, sales and commercial logic.',
+    'mentors.ava.role': 'Marketing & Content Mentor',
+    'mentors.ava.text': 'Content strategy, promotion, social media, AI tools for marketing and communication with the audience.',
+    'mentors.leya.role': 'Creativity & Brand Mentor',
+    'mentors.leya.text': 'Creative concept, brand, visual idea, storytelling, collections and product presentation.',
+    'reviews.eyebrow': 'Reviews',
+    'reviews.title': 'What lab participants say',
+    'reviews.1.text': '“In five days I went from an idea in my head to a finished campaign — that used to take me a whole season. AI stopped feeling like something separate and became part of my work.”',
+    'reviews.1.name': 'Irina K.',
+    'reviews.1.role': 'Designer, own atelier brand',
+    'reviews.2.text': '“I bought the $19 product and got a clear algorithm: one design → visuals → social. Two weeks later I launched my first campaign.”',
+    'reviews.2.name': 'Anya M.',
+    'reviews.2.role': 'Founder of a fashion brand',
+    'reviews.3.text': '“The $199 program is not a course, it is a launch system. Niche, positioning, promotion — each module leaves you with a ready decision.”',
+    'reviews.3.name': 'Polina V.',
+    'reviews.3.role': 'Atelier owner in Berlin',
+    'youtube.label': 'YouTube MARGO Creative Lab',
+    'youtube.title': 'Watch free lessons and breakdowns',
+    'youtube.cta': 'Watch on YouTube',
     'works.title': 'Lab works',
     'works.lead': 'Collections, campaigns and brands born in Margo Creative Lab.',
     'works.course': 'Course',
@@ -364,14 +476,8 @@ const I18N = {
     'faq.a4': 'Yes, especially for the "Mentorship" and "Experiments" formats — they are built around your idea.',
     'cta.title': 'Create what does not yet exist.',
     'cta.lead': 'Turn your imagination into reality.',
-    'cta.btn': 'Enter the future with Margo',
-    'sub.title': 'Stay close to the laboratory',
-    'sub.lead': 'New cohort dates, open experiments and student work — once every week or two, no spam.',
-    'sub.email': 'Your e-mail',
-    'sub.btn': 'Subscribe',
-    'sub.consent': 'I agree to the processing of personal data',
-    'sub.ok': 'Your email app will open. Send the message and we will add you to the next cohort list.',
-    'sub.error': 'Enter a valid e-mail and confirm your consent.',
+    'cta.btn': 'View programs',
+    'footer.channels': 'All MARGO Creative Lab channels',
     'footer.place': 'Frankfurt am Main · online worldwide'
   }
 };
@@ -385,6 +491,10 @@ function applyLang(lang){
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if(dict[key]) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if(dict[key]) el.innerHTML = dict[key];
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');

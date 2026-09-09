@@ -28,9 +28,9 @@
   </a>
   <nav class="mainnav">
     <a href="#manifesto" data-i18n="nav.lab">О лаборатории</a>
-    <a href="#lab" data-i18n="nav.programs">Программы</a>
+    <a href="#products" data-i18n="nav.programs">Программы</a>
     <a href="#founder" data-i18n="nav.margo">О Марго</a>
-    <a href="#subscribe" data-i18n="nav.contacts">Контакты</a>
+    <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
   </nav>
   <button type="button" class="burger" id="burgerBtn" aria-label="Меню" aria-expanded="false" aria-controls="mobileNav"><span></span><span></span><span></span></button>
 </header>
@@ -38,10 +38,10 @@
 <div class="mobile-nav" id="mobileNav" aria-hidden="true">
   <button type="button" class="close" id="mobileNavClose" data-i18n="nav.close">Закрыть</button>
   <a href="#manifesto" data-i18n="nav.lab">О лаборатории</a>
-  <a href="#lab" data-i18n="nav.programs">Программы</a>
+  <a href="#products" data-i18n="nav.programs">Программы</a>
   <a href="#founder" data-i18n="nav.margo">О Марго</a>
-  <a href="#subscribe" data-i18n="nav.contacts">Контакты</a>
-  <a href="#lab" class="btn btn-solid" data-i18n="nav.signup">Записаться</a>
+  <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+  <a href="https://t.me/startatelier_bot?start=guide" target="_blank" rel="noopener noreferrer" class="btn btn-solid" data-i18n="nav.free">Начать бесплатно</a>
 </div>
 
 <div id="scroll-progress" aria-hidden="true"></div>
@@ -58,13 +58,13 @@
         <button type="button" data-lang="ru" class="active">RU</button>
         <button type="button" data-lang="en">EN</button>
       </div>
-      <span class="eyebrow">AI × Fashion × Creativity</span>
+      <span class="eyebrow" data-i18n="hero.eyebrow">AI × Fashion × Business</span>
       <h1>MARGO<span class="thin">CREATIVE LAB</span></h1>
-      <p class="hero-manifest" data-i18n="hero.manifest">Создай то, чего ещё не существует.</p>
-      <p class="hero-tagline" data-i18n="hero.tagline">Лаборатория моды на стыке воображения и искусственного интеллекта</p>
+      <p class="hero-manifest" data-i18n="hero.manifest">Практические инструменты для дизайнеров, владельцев ателье и небольших fashion-брендов.</p>
+      <p class="hero-tagline" data-i18n="hero.tagline">От первой идеи и AI-визуализации до продвижения и построения собственного fashion-бизнеса.</p>
       <div class="hero-actions">
-        <a href="#manifesto" class="btn btn-solid" data-i18n="hero.explore">Исследовать лабораторию</a>
-        <a href="#lab" class="btn btn-outline" data-i18n="hero.programs">Посмотреть программы</a>
+        <a href="https://t.me/startatelier_bot?start=guide" target="_blank" rel="noopener noreferrer" class="btn btn-solid" data-i18n="hero.free">Начать бесплатно</a>
+        <a href="#products" class="btn btn-outline" data-i18n="hero.programs">Посмотреть программы</a>
       </div>
     </div>
   </section>
@@ -142,115 +142,76 @@
     </div>
   </section>
 
-  <section class="lab" id="lab">
+  <section class="products" id="products">
     <div class="wrap">
       <div class="section-head">
-        <h2 data-i18n="lab.title">Лаборатория</h2>
+        <span class="eyebrow" data-i18n="products.eyebrow">Создай · Упакуй · Построй бизнес</span>
+        <h2 data-i18n="products.title">Три уровня погружения</h2>
+        <p class="lead" data-i18n="products.lead">Начни с бесплатного гида, доведи одну коллекцию до полноценной кампании и построй свой fashion-бизнес.</p>
       </div>
 
-      <div class="format-grid">
-        <div class="format-card" data-reveal>
-          <svg class="format-icon" viewBox="0 0 34 34" fill="none" stroke="#241a12" stroke-width="1.2"><path d="M4 8 L17 3 L30 8 L17 13 Z"/><path d="M9 12 V24 C9 26 12 28 17 28 C22 28 25 26 25 24 V12"/></svg>
-          <h4 data-i18n="lab.courses">Курсы</h4>
-          <div class="sub" data-i18n="lab.learn">Учись</div>
-          <p data-i18n="lab.courses.text">Структурированный путь от первого промпта до готовой коллекции — пошагово, с обратной связью.</p>
-        </div>
-        <div class="format-card" data-reveal>
-          <svg class="format-icon" viewBox="0 0 34 34" fill="none" stroke="#241a12" stroke-width="1.2"><rect x="5" y="5" width="10" height="10"/><rect x="19" y="5" width="10" height="10"/><rect x="5" y="19" width="10" height="10"/><rect x="19" y="19" width="10" height="10"/></svg>
-          <h4 data-i18n="lab.workshops">Воркшопы</h4>
-          <div class="sub" data-i18n="lab.practice">Практикуй</div>
-          <p data-i18n="lab.workshops.text">Интенсивы на 1–2 дня: конкретный навык, конкретный результат уже к вечеру.</p>
-        </div>
-        <div class="format-card" data-reveal>
-          <svg class="format-icon" viewBox="0 0 34 34" fill="none" stroke="#241a12" stroke-width="1.2"><path d="M17 3 C21 8 21 12 17 17 C13 12 13 8 17 3 Z"/><path d="M17 17 V30"/><path d="M17 22 C12 22 8 26 8 30"/><path d="M17 22 C22 22 26 26 26 30"/></svg>
-          <h4 data-i18n="lab.mentor">Наставничество</h4>
-          <div class="sub" data-i18n="lab.grow">Расти</div>
-          <p data-i18n="lab.mentor.text">Персональное сопровождение проекта — от идеи до кампании рядом с Марго.</p>
-        </div>
-        <div class="format-card" data-reveal>
-          <svg class="format-icon" viewBox="0 0 34 34" fill="none" stroke="#241a12" stroke-width="1.2"><circle cx="17" cy="17" r="13"/></svg>
-          <h4 data-i18n="lab.exp">Эксперименты</h4>
-          <div class="sub" data-i18n="lab.create">Создавай</div>
-          <p data-i18n="lab.exp.text">Открытая площадка для тех, кто уже владеет инструментами и ищет новую форму.</p>
-        </div>
-      </div>
+      <div class="products-grid">
 
-      <div class="lab-detail">
-        <div class="accordion" id="labAccordion">
-          <div class="accordion-item open">
-            <button type="button" class="accordion-trig" aria-expanded="true"><span data-i18n="lab.acc.about">О программе</span><span class="plus"></span></button>
-            <div class="accordion-panel">
-              <p data-i18n="lab.acc.about.text">Margo Creative Lab — это не курс по нейросетям, а лаборатория, где мода и ИИ работают вместе. За основной интенсив ты пройдёшь путь от идеи до готовой рекламной кампании — тем же маршрутом, которым идут дизайнерские дома, только без бюджета на производство и студию.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button type="button" class="accordion-trig" aria-expanded="false"><span data-i18n="lab.acc.req">Требования к участию</span><span class="plus"></span></button>
-            <div class="accordion-panel">
-              <p data-i18n="lab.acc.req.text">Опыт в дизайне не обязателен. Нужны: ноутбук, любопытство и готовность смотреть на моду не только как на вещь, но и как на историю. Базовое знакомство с любым графическим редактором — плюс, но не условие.</p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <button type="button" class="accordion-trig" aria-expanded="false"><span data-i18n="lab.acc.format">Формат и длительность</span><span class="plus"></span></button>
-            <div class="accordion-panel">
-              <p data-i18n="lab.acc.format.text">Онлайн, живые созвоны и практика в своём темпе. Базовый интенсив — 5 дней, глубина модулей растёт от идеи к кампании.</p>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h4 style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-family:'Manrope',sans-serif;margin-bottom:8px;" data-i18n="lab.inside">Что внутри</h4>
-          <ul class="schedule" id="schedule">
-            <li>
-              <div class="sched-row">
-                <span class="sched-day" data-i18n="lab.day1">День 1</span>
-                <span class="sched-title" data-i18n="lab.day1.title">Погружение в ИИ как в материал</span>
-              </div>
-              <div class="sched-body"><p data-i18n="lab.day1.text">Разбираем инструменты не как софт, а как новый вид ткани — что он умеет, где сопротивляется, как с ним «шить».</p></div>
-            </li>
-            <li>
-              <div class="sched-row">
-                <span class="sched-day" data-i18n="lab.day2">День 2</span>
-                <span class="sched-title" data-i18n="lab.day2.title">От референса к силуэту</span>
-              </div>
-              <div class="sched-body"><p data-i18n="lab.day2.text">Собираем визуальный код будущей коллекции: настроение, цвет, форма.</p></div>
-            </li>
-            <li>
-              <div class="sched-row">
-                <span class="sched-day" data-i18n="lab.day3">День 3</span>
-                <span class="sched-title" data-i18n="lab.day3.title">Коллекция вместо одного образа</span>
-              </div>
-              <div class="sched-body"><p data-i18n="lab.day3.text">Расширяем находку в серию — принцип вариативности и цельности.</p></div>
-            </li>
-            <li>
-              <div class="sched-row">
-                <span class="sched-day" data-i18n="lab.day4">День 4</span>
-                <span class="sched-title" data-i18n="lab.day4.title">Бренд вокруг идеи</span>
-              </div>
-              <div class="sched-body"><p data-i18n="lab.day4.text">Название, айдентика, интонация — коллекция становится историей со своим голосом.</p></div>
-            </li>
-            <li>
-              <div class="sched-row">
-                <span class="sched-day" data-i18n="lab.day5">День 5</span>
-                <span class="sched-title" data-i18n="lab.day5.title">Кампания и презентация</span>
-              </div>
-              <div class="sched-body"><p data-i18n="lab.day5.text">Финальная съёмка, сборка кампании, показ работы миру.</p></div>
-            </li>
+        <article class="product-card" data-reveal>
+          <div class="product-badge product-badge--free" data-i18n="products.free.badge">FREE</div>
+          <div class="product-num">01</div>
+          <h3 class="product-title" data-i18n="products.free.title">Создай свою первую мини-коллекцию с помощью ИИ</h3>
+          <p class="product-sub" data-i18n="products.free.sub">Как из одной идеи создать 5 связанных между собой fashion-образов.</p>
+          <ul class="product-list">
+            <li data-i18n="products.free.li1">Поиск идеи и концепции</li>
+            <li data-i18n="products.free.li2">Разработка направления</li>
+            <li data-i18n="products.free.li3">AI prompts для дизайнера</li>
+            <li data-i18n="products.free.li4">Создание fashion-образов</li>
+            <li data-i18n="products.free.li5">Сборка первой мини-коллекции</li>
           </ul>
-        </div>
-      </div>
+          <div class="product-result">
+            <span class="product-result-label" data-i18n="products.result">Результат</span>
+            <p data-i18n="products.free.result">Первая AI mini collection и понимание, как использовать AI как инструмент дизайнера.</p>
+          </div>
+          <p class="product-note" data-i18n-html="products.free.note">* Для получения бесплатных материалов в Telegram-боте напишите слово <b>GUIDE</b>.</p>
+          <a href="https://t.me/startatelier_bot?start=guide" target="_blank" rel="noopener noreferrer" class="btn btn-solid product-cta" data-i18n="products.free.cta">Получить бесплатно</a>
+        </article>
 
-      <div class="uniqueness">
-        <h4 style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);font-family:'Manrope',sans-serif;margin-bottom:24px;" data-i18n="lab.uniq">Уникальность программы</h4>
-        <ul class="uniqueness-grid">
-          <li data-i18n="lab.uniq.1">Работаешь над своим проектом, а не учебным упражнением</li>
-          <li data-i18n="lab.uniq.2">Ведёт практикующий креативный директор, а не преподаватель теории</li>
-          <li data-i18n="lab.uniq.3">Результат — не сертификат, а готовая кампания в портфолио</li>
-          <li data-i18n="lab.uniq.4">Разбор работ вживую, а не по шаблону</li>
-        </ul>
-      </div>
+        <article class="product-card product-card--featured" data-reveal>
+          <div class="product-badge" data-i18n="products.paid.badge">$19</div>
+          <div class="product-num">02</div>
+          <h3 class="product-title" data-i18n="products.paid.title">Одно платье — целая рекламная кампания</h3>
+          <p class="product-sub" data-i18n="products.paid.sub">Как из одного дизайна собрать визуалы, контент и готовую презентацию продукта.</p>
+          <ul class="product-list">
+            <li data-i18n="products.paid.li1">AI-модель на основе твоего дизайна</li>
+            <li data-i18n="products.paid.li2">Разные ракурсы одного образа</li>
+            <li data-i18n="products.paid.li3">Campaign images для бренда</li>
+            <li data-i18n="products.paid.li4">Social-media content</li>
+            <li data-i18n="products.paid.li5">Готовая fashion-история продукта</li>
+          </ul>
+          <div class="product-result">
+            <span class="product-result-label" data-i18n="products.result">Результат</span>
+            <p data-i18n="products.paid.result">Один дизайн превращается в полноценную campaign concept.</p>
+          </div>
+          <!-- TODO: заменить href на PayPal-ссылку для $19 -->
+          <a href="mailto:hello@margocreativelab.com?subject=MARGO%20Creative%20Lab%20%E2%80%94%20%2419&amp;body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%B8%D0%BE%D0%B1%D1%80%D0%B5%D1%81%D1%82%D0%B8%20%D0%BF%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%20%C2%AB%D0%9E%D0%B4%D0%BD%D0%BE%20%D0%BF%D0%BB%D0%B0%D1%82%D1%8C%D0%B5%20%E2%80%94%20%D1%86%D0%B5%D0%BB%D0%B0%D1%8F%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%B0%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%C2%BB%20(%2419).%20%D0%9F%D1%80%D0%B8%D1%88%D0%BB%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20PayPal-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83%20%D0%BD%D0%B0%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%83." class="btn btn-solid product-cta" data-i18n="products.paid.cta">Создать свою кампанию</a>
+        </article>
 
-      <div class="lab-cta">
-        <a href="#subscribe" class="btn btn-solid" data-i18n="lab.cta">Сообщить об открытии набора</a>
+        <article class="product-card" data-reveal>
+          <div class="product-badge" data-i18n="products.program.badge">$199</div>
+          <div class="product-num">03</div>
+          <h3 class="product-title" data-i18n="products.program.title">Как построить своё fashion-ателье</h3>
+          <p class="product-sub" data-i18n="products.program.sub">Полная система запуска fashion-бизнеса — пять модулей от идеи до продаж.</p>
+          <ul class="product-list product-list--modules">
+            <li><b data-i18n="products.program.m1">Идея</b><span data-i18n="products.program.m1.sub">концепция, ниша, стиль</span></li>
+            <li><b data-i18n="products.program.m2">Позиционирование</b><span data-i18n="products.program.m2.sub">бренд, аудитория, отличие</span></li>
+            <li><b data-i18n="products.program.m3">Услуги</b><span data-i18n="products.program.m3.sub">продуктовая линейка, цены, формат</span></li>
+            <li><b data-i18n="products.program.m4">Процессы</b><span data-i18n="products.program.m4.sub">производство, организация, управление</span></li>
+            <li><b data-i18n="products.program.m5">Продвижение</b><span data-i18n="products.program.m5.sub">контент, продажи, маркетинг</span></li>
+          </ul>
+          <div class="product-result">
+            <span class="product-result-label" data-i18n="products.result">Результат</span>
+            <p data-i18n="products.program.result">Готовая система запуска своего fashion-ателье.</p>
+          </div>
+          <!-- TODO: заменить href на PayPal-ссылку для $199 -->
+          <a href="mailto:hello@margocreativelab.com?subject=MARGO%20Creative%20Lab%20%E2%80%94%20%24199&amp;body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%B8%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%82%D1%8C%D1%81%D1%8F%20%D0%BA%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B5%20%C2%AB%D0%9A%D0%B0%D0%BA%20%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C%20%D1%81%D0%B2%D0%BE%D1%91%20fashion-%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%B5%C2%BB%20(%24199).%20%D0%9F%D1%80%D0%B8%D1%88%D0%BB%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20PayPal-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83%20%D0%BD%D0%B0%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%83." class="btn btn-solid product-cta" data-i18n="products.program.cta">Join Program</a>
+        </article>
+
       </div>
     </div>
   </section>
@@ -266,11 +227,11 @@
           <div class="strip-cap"><b>01</b><span data-i18n="process.1.title">Идея</span></div>
         </div>
         <div>
-          <div class="strip-card"><picture><source type="image/webp" srcset="images/strip-02.webp"><img loading="lazy" decoding="async" src="images/strip-02.jpg" alt="Работа над концепцией и мудбордом"></picture></div>
+          <div class="strip-card"><picture><img loading="lazy" decoding="async" src="images/strip-02.png" alt="Концепция коллекции: работа с AI-инструментами дизайнера"></picture></div>
           <div class="strip-cap"><b>02</b><span data-i18n="campaign.2">Концепция</span></div>
         </div>
         <div>
-          <div class="strip-card"><picture><source type="image/webp" srcset="images/strip-03.webp"><img loading="lazy" decoding="async" src="images/strip-03.jpg" alt="Крупный план образа"></picture></div>
+          <div class="strip-card"><picture><img loading="lazy" decoding="async" src="images/strip-03.png" alt="Образ: чёрно-белое кутюрное платье на террасе у моря"></picture></div>
           <div class="strip-cap"><b>03</b><span data-i18n="campaign.3">Образ</span></div>
         </div>
         <div>
@@ -300,7 +261,54 @@
         <p data-i18n="founder.p1">Марго работает на стыке моды и генеративных технологий: от индивидуальных капсульных коллекций до рекламных кампаний, полностью собранных при помощи ИИ.</p>
         <p data-i18n="founder.p2">Верит, что нейросеть — не замена дизайнеру, а новый инструмент в его руках, такой же, как когда-то стала швейная машина.</p>
         <div class="founder-quote" data-i18n="founder.quote">«Технологии не спрашивают, есть ли у тебя ателье. Они спрашивают, есть ли у тебя идея.»</div>
-        <a href="https://t.me/MarinaTopalo" class="btn btn-outline" target="_blank" rel="noopener noreferrer" data-i18n="founder.write">Написать Марго</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mentors" id="mentors">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="mentors.eyebrow">Команда MARGO Creative Lab</span>
+        <h2 data-i18n="mentors.title">Менторы программы</h2>
+        <p class="lead" data-i18n="mentors.lead">Четыре взгляда на fashion-бизнес: стратегия, маркетинг, креатив и предпринимательский опыт.</p>
+      </div>
+      <div class="mentors-grid">
+        <article class="mentor-card" data-reveal>
+          <div class="mentor-photo"><img src="images/mentor-margo.jpg" alt="Margo — Founder &amp; Fashion Business Mentor" loading="lazy" decoding="async"></div>
+          <div class="mentor-body">
+            <span class="mentor-kicker" data-i18n="mentors.kicker">Mentor</span>
+            <h3 class="mentor-name">Margo</h3>
+            <p class="mentor-role" data-i18n="mentors.margo.role">Founder &amp; Fashion Business Mentor</p>
+            <p class="mentor-text" data-i18n="mentors.margo.text">Видение проекта, fashion-бизнес, стратегия, предпринимательский опыт и общая методология MARGO Creative Lab.</p>
+          </div>
+        </article>
+        <article class="mentor-card" data-reveal>
+          <div class="mentor-photo"><img src="images/mentor-kendra.jpg" alt="Kendra — Business Strategy Mentor" loading="lazy" decoding="async"></div>
+          <div class="mentor-body">
+            <span class="mentor-kicker" data-i18n="mentors.kicker">Mentor</span>
+            <h3 class="mentor-name">Kendra</h3>
+            <p class="mentor-role" data-i18n="mentors.kendra.role">Business Strategy Mentor</p>
+            <p class="mentor-text" data-i18n="mentors.kendra.text">Бизнес-модель, позиционирование, структура, рост, продажи и коммерческая логика.</p>
+          </div>
+        </article>
+        <article class="mentor-card" data-reveal>
+          <div class="mentor-photo"><img src="images/mentor-ava.jpg" alt="Ava — Marketing &amp; Content Mentor" loading="lazy" decoding="async"></div>
+          <div class="mentor-body">
+            <span class="mentor-kicker" data-i18n="mentors.kicker">Mentor</span>
+            <h3 class="mentor-name">Ava</h3>
+            <p class="mentor-role" data-i18n="mentors.ava.role">Marketing &amp; Content Mentor</p>
+            <p class="mentor-text" data-i18n="mentors.ava.text">Контент-стратегия, продвижение, social media, AI-инструменты для маркетинга и коммуникация с аудиторией.</p>
+          </div>
+        </article>
+        <article class="mentor-card" data-reveal>
+          <div class="mentor-photo"><img src="images/mentor-leya.jpg" alt="Leya — Creativity &amp; Brand Mentor" loading="lazy" decoding="async"></div>
+          <div class="mentor-body">
+            <span class="mentor-kicker" data-i18n="mentors.kicker">Mentor</span>
+            <h3 class="mentor-name">Leya</h3>
+            <p class="mentor-role" data-i18n="mentors.leya.role">Creativity &amp; Brand Mentor</p>
+            <p class="mentor-text" data-i18n="mentors.leya.text">Креативная концепция, бренд, визуальная идея, storytelling, коллекции и подача продукта.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -336,6 +344,38 @@
           <div class="work-thumb"><picture><source type="image/webp" srcset="images/create-design.webp"><img loading="lazy" decoding="async" src="images/create-design.jpg" alt="Verre & Voile"></picture></div>
           <div class="work-meta"><span class="name">Verre &amp; Voile</span><span class="fmt" data-i18n="lab.mentor">Наставничество</span></div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="reviews.eyebrow">Отзывы</span>
+        <h2 data-i18n="reviews.title">Что говорят участницы лаборатории</h2>
+      </div>
+      <div class="reviews-grid">
+        <figure class="review-card" data-reveal>
+          <blockquote data-i18n="reviews.1.text">«За пять дней от идеи в голове дошла до готовой кампании — раньше это заняло бы у меня сезон. AI перестал казаться чем-то отдельным, стал частью работы.»</blockquote>
+          <figcaption>
+            <span class="review-name" data-i18n="reviews.1.name">Ирина К.</span>
+            <span class="review-role" data-i18n="reviews.1.role">Дизайнер, свой ателье-бренд</span>
+          </figcaption>
+        </figure>
+        <figure class="review-card" data-reveal>
+          <blockquote data-i18n="reviews.2.text">«Купила продукт за $19 и получила ясный алгоритм: один дизайн → визуалы → соцсети. Через две недели запустила первую кампанию.»</blockquote>
+          <figcaption>
+            <span class="review-name" data-i18n="reviews.2.name">Аня М.</span>
+            <span class="review-role" data-i18n="reviews.2.role">Основательница fashion-бренда</span>
+          </figcaption>
+        </figure>
+        <figure class="review-card" data-reveal>
+          <blockquote data-i18n="reviews.3.text">«Программа $199 — это не курс, а система запуска. Ниша, позиционирование, продвижение — по каждому модулю уходишь с готовым решением.»</blockquote>
+          <figcaption>
+            <span class="review-name" data-i18n="reviews.3.name">Полина В.</span>
+            <span class="review-role" data-i18n="reviews.3.role">Владелица ателье в Берлине</span>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -376,35 +416,49 @@
     <div class="wrap">
       <h2 data-i18n="cta.title">Создай то, чего ещё не существует.</h2>
       <p class="lead" data-i18n="cta.lead">Преврати своё воображение в реальность.</p>
-      <a href="#subscribe" class="btn btn-solid" data-i18n="cta.btn">Войди в мир будущего с Марго</a>
+      <a href="#products" class="btn btn-solid" data-i18n="cta.btn">Смотреть программы</a>
     </div>
   </section>
 
-  <section class="subscribe" id="subscribe">
-    <div class="wrap sub-grid">
-      <div>
-        <h2 data-i18n="sub.title">Будь в курсе лаборатории</h2>
-        <p class="lead" data-i18n="sub.lead">Даты новых потоков, открытые эксперименты и работы участников — раз в одну-две недели, без спама.</p>
-      </div>
-      <form class="sub-form" id="subForm" novalidate>
-        <div class="sub-row">
-          <input type="email" name="email" autocomplete="email" placeholder="Ваш e-mail" data-i18n-placeholder="sub.email" required>
-          <button type="submit" data-i18n="sub.btn">Подписаться</button>
-        </div>
-        <label class="consent">
-          <input type="checkbox" name="consent" required>
-          <span data-i18n="sub.consent">Согласен(на) с обработкой персональных данных</span>
-        </label>
-        <p class="sub-error" id="subError" data-i18n="sub.error">Укажите корректный e-mail и подтвердите согласие.</p>
-        <p class="sub-success" id="subSuccess" data-i18n="sub.ok">Откроется почтовый клиент. Отправьте письмо — и мы добавим вас в список ближайшего потока.</p>
-      </form>
+  <section class="community">
+    <div class="wrap community-inner">
+      <span class="eyebrow" data-i18n="community.eyebrow">Telegram MARGO Creative Lab</span>
+      <h2 data-i18n="community.title">Хотите больше практических материалов по AI, Fashion и Business?</h2>
+      <ul class="community-list">
+        <li data-i18n="community.li1">AI-инструменты и практические уроки</li>
+        <li data-i18n="community.li2">Fashion-кейсы и разборы</li>
+        <li data-i18n="community.li3">Идеи для коллекций</li>
+        <li data-i18n="community.li4">Новости и анонсы новых продуктов</li>
+      </ul>
+      <a href="https://t.me/MargoCreativeCommunity" target="_blank" rel="noopener noreferrer" class="btn btn-solid" data-i18n="community.cta">Присоединиться к Telegram</a>
     </div>
   </section>
 
 </main>
 
-<footer>
+<footer id="contacts">
   <div class="wrap">
+    <div class="foot-channels">
+      <span class="foot-channels-label" data-i18n="footer.channels">Все каналы MARGO Creative Lab</span>
+      <div class="foot-channels-list">
+        <a class="foot-channel" href="https://www.instagram.com/margocreativelab/" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          <span>Instagram</span>
+        </a>
+        <a class="foot-channel" href="https://t.me/MargoCreativeCommunity" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 4 L3 11.5 L10 13.5 L12.5 20.5 L15 15 L21 4Z"/><path d="M10 13.5 L21 4"/></svg>
+          <span>Telegram</span>
+        </a>
+        <a class="foot-channel" href="https://www.youtube.com/@MarinaTopalo" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M10 9.5 L15 12 L10 14.5 Z" fill="currentColor" stroke="none"/></svg>
+          <span>YouTube</span>
+        </a>
+        <a class="foot-channel" href="mailto:hello@margocreativelab.com">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6 L12 13 L21 6"/></svg>
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
     <div class="foot-top">
       <div class="foot-logo logo">
         <div class="l1">MARGO</div>
@@ -412,15 +466,10 @@
       </div>
       <nav class="foot-nav">
         <a href="#manifesto" data-i18n="nav.lab">О лаборатории</a>
-        <a href="#lab" data-i18n="nav.programs">Программы</a>
+        <a href="#products" data-i18n="nav.programs">Программы</a>
+        <a href="#mentors" data-i18n="nav.mentors">Менторы</a>
         <a href="#founder" data-i18n="nav.margo">О Марго</a>
-        <a href="#subscribe" data-i18n="nav.contacts">Контакты</a>
       </nav>
-      <div class="foot-social">
-        <a href="https://www.instagram.com/p/DcUAbpuje_k/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbbca9" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
-        <a href="https://t.me/MargoCreativeCommunity" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbbca9" stroke-width="1.4"><path d="M21 4 L3 11.5 L10 13.5 L12.5 20.5 L15 15 L21 4Z"/><path d="M10 13.5 L21 4"/></svg></a>
-        <a href="mailto:hello@margocreativelab.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbbca9" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6 L12 13 L21 6"/></svg></a>
-      </div>
     </div>
     <div class="foot-bottom">
       <span>© 2026 Margo Creative Lab</span>
