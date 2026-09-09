@@ -1,35 +1,14 @@
-# Working sources — not part of the published site
-SKILL.md
-first code.md
-crop_maket.py
-extract_images.py
-_audit.py
-_qa/
-maket.png
-photo_*.jpg
+# =============================================================
+#  MARGO Creative Lab — landing
+#  Игнорируем всё, что не относится к опубликованному сайту.
+#  Прод-стек: index.html + css/ + js/ + images/
+# =============================================================
 
-# Unused / intermediate images
-images/_maket-source.png
-images/maket-slices/
-images/hero-breeze.gif
-images/cta-left.jpg
-images/cta-left.webp
-images/cta-right.jpg
-images/cta-right.webp
-images/cta-fabric.jpg
-images/cta-fabric.webp
-images/strip-01-idea.jpg
-images/strip-01-idea.webp
-images/strip-02-concept.jpg
-images/strip-02-concept.webp
-images/strip-03-look.jpg
-images/strip-03-look.webp
-images/strip-04-collection.jpg
-images/strip-04-collection.webp
-images/strip-05-campaign.jpg
-images/strip-05-campaign.webp
-images/strip-06-story.jpg
-images/strip-06-story.webp
+# Рабочие исходники (макеты, сырые фото, скрипты, черновики)
+_source/
+
+# QA-артефакты (скриншоты, дампы DOM)
+_qa/
 
 # OS / editor
 .DS_Store
