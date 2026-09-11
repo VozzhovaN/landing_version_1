@@ -253,6 +253,21 @@ const I18N = {
     'campaign.2': 'Концепция',
     'campaign.3': 'Образ',
     'campaign.6': 'История',
+    'campaign.1.title': 'Концепция',
+    'campaign.1.sub': 'Идея и направление',
+    'campaign.1.text': 'Мы начинаем с вашей идеи, целей и целевой аудитории. Разрабатываем концепцию, стиль и визуальную концепцию бренда.',
+    'campaign.2.title': 'Создание',
+    'campaign.2.sub': 'Дизайн и разработка',
+    'campaign.2.text': 'Мы создаём продукт: разрабатываем дизайн, подбираем ткани, прорабатываем детали и готовим образ для съёмки и рекламной кампании.',
+    'campaign.3.title': 'AI Продакшн',
+    'campaign.3.sub': 'Визуалы и контент',
+    'campaign.3.text': 'Мы создаём профессиональные AI-визуалы, фото и видео, которые передают атмосферу бренда и подчёркивают уникальность коллекции.',
+    'campaign.4.title': 'Рекламная кампания',
+    'campaign.4.sub': 'Готовые визуалы',
+    'campaign.4.text': 'Вы получаете полный набор визуальных материалов для рекламной кампании: имиджевые фото, подвижный контент, баннеры и вариации для разных каналов.',
+    'campaign.5.title': 'Продвижение',
+    'campaign.5.sub': 'Публикация и результат',
+    'campaign.5.text': 'Контент готов к использованию на сайте, в социальных сетях и рекламных каналах. Мы помогаем вам привлечь внимание, повысить узнаваемость бренда и увеличить продажи.',
     'founder.title': 'Креативный директор и основатель лаборатории',
     'founder.p1': 'Марго работает на стыке моды и генеративных технологий: от индивидуальных капсульных коллекций до рекламных кампаний, полностью собранных при помощи ИИ.',
     'founder.p2': 'Верит, что нейросеть — не замена дизайнеру, а новый инструмент в его руках, такой же, как когда-то стала швейная машина.',
@@ -428,6 +443,21 @@ const I18N = {
     'campaign.2': 'Concept',
     'campaign.3': 'Look',
     'campaign.6': 'Story',
+    'campaign.1.title': 'Concept',
+    'campaign.1.sub': 'Idea and direction',
+    'campaign.1.text': 'We start from your idea, goals and audience. We develop the concept, style and visual identity of the brand.',
+    'campaign.2.title': 'Creation',
+    'campaign.2.sub': 'Design and development',
+    'campaign.2.text': 'We create the product: develop the design, select fabrics, refine the details and prepare the look for shooting and the campaign.',
+    'campaign.3.title': 'AI Production',
+    'campaign.3.sub': 'Visuals and content',
+    'campaign.3.text': 'We create professional AI visuals, photo and video that carry the brand atmosphere and emphasise the uniqueness of the collection.',
+    'campaign.4.title': 'Advertising campaign',
+    'campaign.4.sub': 'Ready visuals',
+    'campaign.4.text': 'You receive a full set of campaign materials: image photos, motion content, banners and variations for different channels.',
+    'campaign.5.title': 'Promotion',
+    'campaign.5.sub': 'Publication and result',
+    'campaign.5.text': 'The content is ready for the website, social media and ad channels. We help you attract attention, grow brand recognition and increase sales.',
     'founder.title': 'Creative director and founder of the laboratory',
     'founder.p1': 'Margo works at the intersection of fashion and generative technology: from capsule collections to advertising campaigns assembled with AI.',
     'founder.p2': 'She believes a neural network is not a replacement for the designer, but a new tool in their hands — just as the sewing machine once was.',
@@ -478,6 +508,13 @@ const I18N = {
   }
 };
 
+function readStoredLang(){
+  try { return localStorage.getItem('margo-lang'); } catch(e){ return null; }
+}
+function writeStoredLang(lang){
+  try { localStorage.setItem('margo-lang', lang); } catch(e){}
+}
+
 function applyLang(lang){
   const dict = I18N[lang] || I18N.en;
   document.documentElement.lang = lang;
@@ -499,7 +536,7 @@ function applyLang(lang){
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
-  localStorage.setItem('margo-lang', lang);
+  writeStoredLang(lang);
   requestAnimationFrame(refreshOpenPanels);
 }
 
@@ -507,7 +544,7 @@ document.querySelectorAll('.lang-switch button').forEach(btn => {
   btn.addEventListener('click', () => applyLang(btn.dataset.lang));
 });
 
-applyLang(localStorage.getItem('margo-lang') === 'ru' ? 'ru' : 'en');
+applyLang(readStoredLang() === 'ru' ? 'ru' : 'en');
 
 /* ---- Scroll-reveal via IntersectionObserver ---- */
 const revealObserver = new IntersectionObserver(entries => {
