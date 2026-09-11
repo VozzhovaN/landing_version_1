@@ -203,11 +203,17 @@ const I18N = {
     'process.4.text': 'Создай целый мир. Один образ превращается в цельную линейку.',
     'process.5.title': 'Кампания',
     'process.5.text': 'Покажи её миру. Коллекция становится брендом.',
-    'create.title': 'Что ты создашь?',
-    'create.design': 'Дизайн',
-    'create.atelier': 'Ателье',
-    'create.brand': 'Бренд',
-    'create.creative': 'Креатив',
+    'create.title': 'Создай визуальный контент fashion-продукта с AI',
+    'create.lead': 'Вы приходите с идеей — а с помощью ИИ уходите с визуальным продуктом для продвижения и продаж.',
+    'create.note': 'Весь путь — от мудборда до кампании — создаётся с ИИ.',
+    'create.1.title': 'Идея',
+    'create.1.text': 'ИИ-мудборд, референсы, промпты.',
+    'create.2.title': 'Создание',
+    'create.2.text': 'Образ и силуэт с помощью ИИ.',
+    'create.3.title': 'Кампания',
+    'create.3.text': 'ИИ-визуалы, съёмки, контент.',
+    'create.4.title': 'Рынок',
+    'create.4.text': 'Готовый продукт с ИИ для продвижения и продаж.',
     'lab.title': 'Лаборатория',
     'lab.courses': 'Курсы',
     'lab.learn': 'Учись',
@@ -372,11 +378,17 @@ const I18N = {
     'process.4.text': 'Create a whole world. One look becomes a coherent line.',
     'process.5.title': 'Campaign',
     'process.5.text': 'Show it to the world. The collection becomes a brand.',
-    'create.title': 'What will you create?',
-    'create.design': 'Design',
-    'create.atelier': 'Atelier',
-    'create.brand': 'Brand',
-    'create.creative': 'Creative',
+    'create.title': 'Create visual content for a fashion product with AI',
+    'create.lead': 'You arrive with an idea — and with AI you leave with a visual product for promotion and sales.',
+    'create.note': 'The whole path — from moodboard to campaign — is created with AI.',
+    'create.1.title': 'Idea',
+    'create.1.text': 'AI moodboard, references, prompts.',
+    'create.2.title': 'Creation',
+    'create.2.text': 'Look and silhouette with AI.',
+    'create.3.title': 'Campaign',
+    'create.3.text': 'AI visuals, shoots, content.',
+    'create.4.title': 'Market',
+    'create.4.text': 'A finished AI product for promotion and sales.',
     'lab.title': 'Laboratory',
     'lab.courses': 'Courses',
     'lab.learn': 'Learn',
@@ -467,7 +479,7 @@ const I18N = {
 };
 
 function applyLang(lang){
-  const dict = I18N[lang] || I18N.ru;
+  const dict = I18N[lang] || I18N.en;
   document.documentElement.lang = lang;
   document.title = lang === 'en'
     ? 'Margo Creative Lab — create what does not yet exist'
@@ -495,7 +507,7 @@ document.querySelectorAll('.lang-switch button').forEach(btn => {
   btn.addEventListener('click', () => applyLang(btn.dataset.lang));
 });
 
-applyLang(localStorage.getItem('margo-lang') === 'en' ? 'en' : 'ru');
+applyLang(localStorage.getItem('margo-lang') === 'ru' ? 'ru' : 'en');
 
 /* ---- Scroll-reveal via IntersectionObserver ---- */
 const revealObserver = new IntersectionObserver(entries => {

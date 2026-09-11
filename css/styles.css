@@ -345,38 +345,56 @@ section{padding:110px 0;}
 
 /* ---------- Create cards ---------- */
 .create{padding-top:0;background:var(--cream);}
+.create-note{
+  margin:14px auto 0;max-width:580px;
+  font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--ink-soft);
+}
 .create-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:10px;
+  gap:28px;
 }
-.create-card{
-  position:relative;
+.create-card{position:relative;text-align:center;}
+.create-media{
   aspect-ratio:3/4;
   overflow:hidden;
   background:var(--cream-2);
 }
-.create-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center 20%;
-  transform:scale(1.001);
+.create-media img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
 }
-.create-card::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg, rgba(20,14,8,0) 48%, rgba(20,14,8,.72) 100%);
+.create-card:not(:last-child)::after{
+  content:"";
+  position:absolute;top:calc(37.5% - 8px);right:-18px;
+  width:22px;height:1px;background:var(--line);
 }
-.create-card .content{
-  position:absolute;left:0;right:0;bottom:0;z-index:1;
-  padding:26px 20px 22px;
-  text-align:center;
+.create-card:not(:last-child)::before{
+  content:"";
+  position:absolute;top:calc(37.5% - 11px);right:-21px;
+  width:7px;height:7px;
+  border-right:1px solid rgba(42,26,16,.35);
+  border-top:1px solid rgba(42,26,16,.35);
+  transform:rotate(45deg);
+}
+.create-cap{margin-top:16px;}
+.create-num{
+  font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--gold-deep);
+  display:block;letter-spacing:.12em;
 }
 .create-card h3{
-  font-size:22px;color:var(--cream);letter-spacing:.08em;text-transform:uppercase;
+  margin-top:8px;
+  font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);
 }
-.create-card p{display:none;}
-@media(max-width:900px){.create-grid{grid-template-columns:1fr 1fr;}}
+.create-card p{
+  margin:8px 0 0;font-size:13px;color:var(--ink-soft);line-height:1.5;
+}
+@media(max-width:900px){
+  .create-grid{grid-template-columns:1fr 1fr;gap:22px;}
+  .create-card:not(:last-child)::before,
+  .create-card:not(:last-child)::after{display:none;}
+}
 @media(max-width:560px){.create-grid{grid-template-columns:1fr;}}
 
 /* ---------- Lab ---------- */
@@ -943,7 +961,7 @@ body::after{
   transform:translateY(-6px) scale(1.012);
   box-shadow:0 20px 48px rgba(36,26,18,.18);
 }
-.create-card img{
+.create-media img{
   transition:transform .6s var(--ease);
 }
 .create-card:hover img{
