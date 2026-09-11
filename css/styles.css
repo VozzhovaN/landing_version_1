@@ -1042,21 +1042,22 @@ body::after{
 }
 
 /* ========== Scroll-reveal ========== */
-[data-reveal]{
+/* Hidden only after JS successfully enables reveal (html.reveal-on). */
+html.reveal-on [data-reveal]{
   opacity:0;
   transform:translateY(32px);
   transition:opacity .7s var(--ease), transform .7s var(--ease);
 }
-[data-reveal].visible{
+html.reveal-on [data-reveal].visible{
   opacity:1;
   transform:none;
 }
-[data-reveal="left"]{transform:translateX(-28px);}
-[data-reveal="left"].visible{transform:none;}
-[data-reveal="right"]{transform:translateX(28px);}
-[data-reveal="right"].visible{transform:none;}
-[data-reveal="scale"]{transform:scale(.94) translateY(16px);}
-[data-reveal="scale"].visible{transform:none;}
+html.reveal-on [data-reveal="left"]{transform:translateX(-28px);}
+html.reveal-on [data-reveal="left"].visible{transform:none;}
+html.reveal-on [data-reveal="right"]{transform:translateX(28px);}
+html.reveal-on [data-reveal="right"].visible{transform:none;}
+html.reveal-on [data-reveal="scale"]{transform:scale(.94) translateY(16px);}
+html.reveal-on [data-reveal="scale"].visible{transform:none;}
 
 /* ========== Card hover upgrades ========== */
 .create-card{
@@ -1155,6 +1156,7 @@ nav.mainnav a.active::after{transform:scaleX(1) !important;}
 .format-grid [data-reveal]:nth-child(4){transition-delay:.3s;}
 
 @media (prefers-reduced-motion: reduce){
+  html.reveal-on [data-reveal],
   [data-reveal]{opacity:1;transform:none;transition:none;}
   #scroll-progress{display:none;}
 }

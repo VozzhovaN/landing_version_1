@@ -551,13 +551,33 @@ document.querySelectorAll('.lang-switch button').forEach(btn => {
 applyLang(readStoredLang() === 'ru' ? 'ru' : 'en');
 
 /* ---- Scroll-reveal via IntersectionObserver ---- */
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+(function initScrollReveal(){
+  const nodes = document.querySelectorAll('[data-reveal]');
+  if(!nodes.length) return;
 
-document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+  const revealAll = () => {
+    nodes.forEach(el => el.classList.add('visible'));
+  };
+
+  if(!('IntersectionObserver' in window)){
+    revealAll();
+    return;
+  }
+
+  try{
+    document.documentElement.classList.add('reveal-on');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12, rootMargin: '0px 0px -40px 0px'});
+
+    nodes.forEach(el => revealObserver.observe(el));
+  }catch(err){
+    document.documentElement.classList.remove('reveal-on');
+    revealAll();
+  }
+})();
