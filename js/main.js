@@ -263,17 +263,6 @@ const I18N = {
     'mentors.ava.text': 'Контент-стратегия, продвижение, social media, AI-инструменты для маркетинга и коммуникация с аудиторией.',
     'mentors.leya.role': 'Creativity & Brand Mentor',
     'mentors.leya.text': 'Креативная концепция, бренд, визуальная идея, storytelling, коллекции и подача продукта.',
-    'reviews.eyebrow': 'Отзывы',
-    'reviews.title': 'Что говорят участницы лаборатории',
-    'reviews.1.text': '«За пять дней от идеи в голове дошла до готовой кампании — раньше это заняло бы у меня сезон. AI перестал казаться чем-то отдельным, стал частью работы.»',
-    'reviews.1.name': 'Ирина К.',
-    'reviews.1.role': 'Дизайнер, свой ателье-бренд',
-    'reviews.2.text': '«Купила продукт за $19 и получила ясный алгоритм: один дизайн → визуалы → соцсети. Через две недели запустила первую кампанию.»',
-    'reviews.2.name': 'Аня М.',
-    'reviews.2.role': 'Основательница fashion-бренда',
-    'reviews.3.text': '«Программа $199 — это не курс, а система запуска. Ниша, позиционирование, продвижение — по каждому модулю уходишь с готовым решением.»',
-    'reviews.3.name': 'Полина В.',
-    'reviews.3.role': 'Владелица ателье в Берлине',
     'youtube.label': 'YouTube MARGO Creative Lab',
     'youtube.title': 'Смотрите бесплатные уроки и разборы',
     'youtube.cta': 'Смотреть на YouTube',
@@ -282,6 +271,9 @@ const I18N = {
     'works.course': 'Курс',
     'works.workshop': 'Воркшоп',
     'works.experiment': 'Эксперимент',
+    'works.category.project': 'Проект Margo Creative Lab',
+    'works.category.ai': 'AI-концепт',
+    'works.category.study': 'Мудборд',
     'lab.acc.about': 'О программе',
     'lab.acc.about.text': 'Margo Creative Lab — это не курс по нейросетям, а лаборатория, где мода и ИИ работают вместе. За основной интенсив ты пройдёшь путь от идеи до готовой рекламной кампании — тем же маршрутом, которым идут дизайнерские дома, только без бюджета на производство и студию.',
     'lab.acc.req': 'Требования к участию',
@@ -301,7 +293,7 @@ const I18N = {
     'cta.lead': 'Преврати своё воображение в реальность.',
     'cta.btn': 'Смотреть программы',
     'footer.channels': 'Все каналы MARGO Creative Lab',
-    'footer.place': 'Frankfurt am Main · онлайн по всему миру'
+    'footer.place': 'South Africa · Working Worldwide'
   },
   en: {
     'nav.lab': 'About the Lab',
@@ -440,17 +432,6 @@ const I18N = {
     'mentors.ava.text': 'Content strategy, promotion, social media, AI tools for marketing and communication with the audience.',
     'mentors.leya.role': 'Creativity & Brand Mentor',
     'mentors.leya.text': 'Creative concept, brand, visual idea, storytelling, collections and product presentation.',
-    'reviews.eyebrow': 'Reviews',
-    'reviews.title': 'What lab participants say',
-    'reviews.1.text': '“In five days I went from an idea in my head to a finished campaign — that used to take me a whole season. AI stopped feeling like something separate and became part of my work.”',
-    'reviews.1.name': 'Irina K.',
-    'reviews.1.role': 'Designer, own atelier brand',
-    'reviews.2.text': '“I bought the $19 product and got a clear algorithm: one design → visuals → social. Two weeks later I launched my first campaign.”',
-    'reviews.2.name': 'Anya M.',
-    'reviews.2.role': 'Founder of a fashion brand',
-    'reviews.3.text': '“The $199 program is not a course, it is a launch system. Niche, positioning, promotion — each module leaves you with a ready decision.”',
-    'reviews.3.name': 'Polina V.',
-    'reviews.3.role': 'Atelier owner in Berlin',
     'youtube.label': 'YouTube MARGO Creative Lab',
     'youtube.title': 'Watch free lessons and breakdowns',
     'youtube.cta': 'Watch on YouTube',
@@ -459,6 +440,9 @@ const I18N = {
     'works.course': 'Course',
     'works.workshop': 'Workshop',
     'works.experiment': 'Experiment',
+    'works.category.project': 'Margo Creative Lab Project',
+    'works.category.ai': 'AI Concept',
+    'works.category.study': 'Creative Study',
     'lab.acc.about': 'About the program',
     'lab.acc.about.text': 'Margo Creative Lab is not a course about neural networks — it is a laboratory where fashion and AI work together. During the main intensive you will walk the path from idea to a finished advertising campaign, the same route followed by fashion houses — without a production or studio budget.',
     'lab.acc.req': 'Participation requirements',
@@ -478,7 +462,7 @@ const I18N = {
     'cta.lead': 'Turn your imagination into reality.',
     'cta.btn': 'View programs',
     'footer.channels': 'All MARGO Creative Lab channels',
-    'footer.place': 'Frankfurt am Main · online worldwide'
+    'footer.place': 'South Africa · Working Worldwide'
   }
 };
 

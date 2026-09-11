@@ -305,7 +305,7 @@ section{padding:110px 0;}
 .manifesto-body p{font-size:16px;color:var(--ink-soft);margin-bottom:16px;}
 .manifesto-micro{
   margin-top:28px;padding-top:24px;border-top:1px solid var(--line);
-  font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;color:var(--gold-deep);
+  font-family:'Cormorant Garamond',serif;font-size:clamp(23px,2.4vw,28px);font-style:italic;color:var(--gold-deep);
 }
 
 /* ---------- Process ---------- */
@@ -469,7 +469,7 @@ section{padding:110px 0;}
 
 /* ---------- Campaign strip ---------- */
 .campaign{background:var(--cream-2);}
-.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
 .strip-card{
   aspect-ratio:4/3;
   position:relative;
@@ -482,14 +482,41 @@ section{padding:110px 0;}
   object-fit:cover;
   object-position:center;
 }
-.strip-cap{margin-top:10px;text-align:center;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);}
+.strip-cap{
+  margin-top:14px;
+  text-align:left;
+  color:var(--ink-soft);
+  font-family:'Manrope',sans-serif;
+}
 .strip-cap b{color:var(--ink);font-weight:700;margin-right:6px;}
+.strip-head{display:flex;align-items:baseline;gap:10px;margin-bottom:6px;}
+.strip-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;line-height:1;font-weight:400;
+  color:var(--gold-deep);
+  flex:0 0 auto;
+}
+.strip-titles{display:flex;flex-direction:column;min-width:0;}
+.strip-title{
+  font-weight:700;font-size:12px;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink);line-height:1.15;
+}
+.strip-sub{
+  font-weight:500;font-size:10.5px;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-soft);line-height:1.2;margin-top:4px;
+}
+.strip-text{
+  margin:6px 0 0;
+  font-size:12px;line-height:1.55;color:var(--ink-soft);
+}
 @media(max-width:900px){.strip{grid-template-columns:repeat(3,1fr);}}
 @media(max-width:560px){.strip{grid-template-columns:repeat(2,1fr);}}
 
 /* ---------- Works ---------- */
 .works{background:var(--cream);}
-.works-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 .work-card{position:relative;}
 .work-thumb{
   aspect-ratio:3/4;
@@ -502,9 +529,12 @@ section{padding:110px 0;}
   object-fit:cover;
   object-position:center 20%;
 }
-.work-meta{display:flex;justify-content:space-between;margin-top:10px;font-size:13px;}
-.work-meta .name{font-weight:600;}
-.work-meta .fmt{color:var(--ink-soft);}
+.work-meta{display:flex;justify-content:center;margin-top:12px;}
+.work-meta .fmt{
+  font-family:'Manrope',sans-serif;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);
+}
 @media(max-width:900px){.works-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.works-grid{grid-template-columns:1fr;}}
 .works-cta{text-align:center;margin-top:44px;}
@@ -786,50 +816,6 @@ form.sub-form{display:flex;flex-direction:column;gap:14px;}
 }
 @media(max-width:900px){.mentors-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:560px){.mentors-grid{grid-template-columns:1fr;}}
-
-/* ---------- Reviews ---------- */
-.reviews{background:var(--cream-2);}
-.reviews .section-head .eyebrow{display:block;margin-bottom:12px;}
-.reviews-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-.review-card{
-  margin:0;
-  padding:34px 28px 30px;
-  background:var(--cream);
-  border:1px solid var(--line);
-  border-radius:14px;
-  display:flex;flex-direction:column;gap:20px;
-  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
-}
-.review-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 32px rgba(36,26,18,.08);
-}
-.review-card blockquote{
-  margin:0;
-  font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.45;
-  color:var(--ink);font-style:italic;
-}
-.review-card blockquote::before{
-  content:"“";display:block;
-  font-family:'Cormorant Garamond',serif;font-size:44px;line-height:.5;
-  color:var(--gold);margin-bottom:12px;
-}
-.review-card figcaption{
-  margin-top:auto;padding-top:14px;border-top:1px solid var(--line);
-  display:flex;flex-direction:column;gap:2px;
-}
-.review-name{
-  font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;
-  letter-spacing:.06em;color:var(--ink);
-}
-.review-role{
-  font-family:'Manrope',sans-serif;font-size:12px;color:var(--ink-soft);
-}
-@media(max-width:900px){.reviews-grid{grid-template-columns:1fr;}}
 
 /* ---------- YouTube strip ---------- */
 .youtube-strip{
