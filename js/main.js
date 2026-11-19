@@ -138,8 +138,12 @@ const I18N = {
     'hero.eyebrow': 'AI × Fashion × Business',
     'hero.manifest': 'Практические инструменты для дизайнеров, владельцев ателье и небольших fashion-брендов.',
     'hero.tagline': 'От первой идеи и AI-визуализации до продвижения и построения собственного fashion-бизнеса.',
+    'hero.consult.lead': 'Нужна помощь с выбором следующего шага?',
+    'hero.consult.text': 'Поговорите с консультантом по fashion-бизнесу и получите более ясное направление для своих идей, бизнеса или бренда.',
     'hero.free': 'Начать бесплатно',
     'hero.programs': 'Посмотреть программы',
+    'hero.consult.cta': 'Обратиться к консультанту',
+    'consult.inline.opt': 'поставьте галочку, если желаете получить дополнительно презентацию в pdf, и нажмите повторно кнопку',
     'products.eyebrow': 'Создай · Упакуй · Построй бизнес',
     'products.title': 'Три уровня погружения',
     'products.lead': 'Начни с бесплатного гида, доведи одну коллекцию до полноценной кампании и построй свой fashion-бизнес.',
@@ -330,8 +334,12 @@ const I18N = {
     'hero.eyebrow': 'AI × Fashion × Business',
     'hero.manifest': 'Practical tools for designers, atelier owners and small fashion brands.',
     'hero.tagline': 'From the first idea and AI visualisation to promotion and building your own fashion business.',
+    'hero.consult.lead': 'Need help choosing your next step?',
+    'hero.consult.text': 'Talk to the Fashion Business Consultant and get a clearer direction for your ideas, business or brand.',
     'hero.free': 'Start for free',
     'hero.programs': 'View programs',
+    'hero.consult.cta': 'Talk to a consultant',
+    'consult.inline.opt': 'tick the box if you also want the PDF presentation, then press the button again',
     'products.eyebrow': 'Create · Package · Build a business',
     'products.title': 'Three levels of depth',
     'products.lead': 'Start with a free guide, turn one collection into a full campaign, and build your own fashion business.',
@@ -549,6 +557,38 @@ document.querySelectorAll('.lang-switch button').forEach(btn => {
 });
 
 applyLang(readStoredLang() === 'ru' ? 'ru' : 'en');
+
+/* ---- Consult CTA: inline PDF opt under button + Telegram ---- */
+(function initConsultInline(){
+  const openBtn = document.getElementById('consultOpenBtn');
+  const form = document.getElementById('consultInlineForm');
+  const pdfOpt = document.getElementById('consultPdfOpt');
+  if(!openBtn || !form || !pdfOpt) return;
+
+  const TG_URL = 'https://t.me/startatelier_bot';
+  const PDF_URL = 'files/consultant-guide.pdf';
+  const PDF_NAME = 'MARGO-Fashion-Business-Consultant.pdf';
+
+  const downloadPdf = () => {
+    const link = document.createElement('a');
+    link.href = PDF_URL;
+    link.download = PDF_NAME;
+    link.rel = 'noopener';
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  };
+
+  openBtn.addEventListener('click', () => {
+    if(form.hidden){
+      form.hidden = false;
+      pdfOpt.focus();
+      return;
+    }
+    if(pdfOpt.checked) downloadPdf();
+    window.open(TG_URL, '_blank', 'noopener,noreferrer');
+  });
+})();
 
 /* ---- Scroll-reveal via IntersectionObserver ---- */
 (function initScrollReveal(){

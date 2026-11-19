@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/styles.css?v=consult-inline">
 <link rel="preload" as="image" href="images/hero-wide.jpg">
 <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -63,9 +63,22 @@
       <h1>MARGO<span class="thin">CREATIVE LAB</span></h1>
       <p class="hero-manifest" data-i18n="hero.manifest">Practical tools for designers, atelier owners and small fashion brands.</p>
       <p class="hero-tagline" data-i18n="hero.tagline">From the first idea and AI visualisation to promotion and building your own fashion business.</p>
+      <div class="hero-consult">
+        <p class="hero-consult-lead" data-i18n="hero.consult.lead">Need help choosing your next step?</p>
+        <p class="hero-consult-text" data-i18n="hero.consult.text">Talk to the Fashion Business Consultant and get a clearer direction for your ideas, business or brand.</p>
+      </div>
       <div class="hero-actions">
         <a href="https://t.me/startatelier_bot?start=guide" target="_blank" rel="noopener noreferrer" class="btn btn-solid" data-i18n="hero.free">Start for free</a>
         <a href="#products" class="btn btn-outline" data-i18n="hero.programs">View programs</a>
+        <div class="hero-consult-wrap">
+          <button type="button" class="btn btn-outline" id="consultOpenBtn" data-i18n="hero.consult.cta">Talk to a consultant</button>
+          <form class="consult-inline" id="consultInlineForm" hidden>
+            <label class="consult-inline-label">
+              <input type="checkbox" id="consultPdfOpt">
+              <span data-i18n="consult.inline.opt">поставьте галочку, если желаете получить дополнительно презентацию в pdf, и нажмите повторно кнопку</span>
+            </label>
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -530,6 +543,6 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=consult-inline2"></script>
 </body>
 </html>

@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margo Creative Lab — create what does not yet exist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Margo Creative Lab — a fashion laboratory at the intersection of imagination and artificial intelligence. Courses, workshops, mentorship.">
+<meta property="og:title" content="Margo Creative Lab — create what does not yet exist">
+<meta property="og:description" content="A fashion laboratory at the intersection of imagination and AI. Courses, workshops, mentorship.">
+<meta property="og:image" content="images/hero-wide.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="preload" as="image" href="../images/hero-wide.jpg">
+<noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
+
+<style>
+  @page { size: A4; margin: 7mm; }
+  html, body {
+    background: #f5efe6 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  header, footer, .burger, .mobile-nav, .skip-link, #back-to-top, #scroll-progress,
+  .lang-switch, .hero-actions, .consult-modal, .consult-modal-panel, .consult-modal-backdrop,
+  #consultModal, .btn, .product-cta, .faq-trig .plus, .final-cta .side-img {
+    display: none !important;
+  }
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  /* Page 1 — hero: larger text, fill page */
+  .hero {
+    position: relative !important;
+    min-height: 277mm !important;
+    height: 277mm !important;
+    aspect-ratio: auto !important;
+    display: block !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    overflow: hidden !important;
+  }
+  .hero-photo {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 95mm !important;
+    min-height: 0 !important;
+  }
+  .hero-photo img, .hero-photo .hero-base, .hero-photo picture {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .hero-copy {
+    position: absolute !important;
+    top: 95mm !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    padding: 22px 28px 18px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .hero-copy .eyebrow { font-size: 15px !important; margin: 0 0 14px !important; letter-spacing: .16em !important; }
+  .hero-copy h1 { font-size: 74px !important; line-height: .9 !important; margin: 0 0 18px !important; }
+  .hero-copy h1 .thin { font-size: 23px !important; letter-spacing: .28em !important; display: block !important; margin-top: 6px !important; }
+  .hero-manifest {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+    margin: 0 0 16px !important;
+  }
+  .hero-tagline {
+    font-size: 17px !important;
+    line-height: 1.45 !important;
+    max-width: 100% !important;
+    margin: 0 0 22px !important;
+  }
+  /* Page 1 — remove bottom consult text only */
+  .hero-consult { display: none !important; }
+
+  .wrap { padding: 0 8px !important; max-width: 100% !important; }
+  .section-head { margin-bottom: 14px !important; }
+  .section-head h2 { font-size: 26px !important; margin: 0 !important; }
+  .section-head .lead { font-size: 14px !important; margin-top: 8px !important; }
+  .eyebrow { font-size: 11px !important; margin-bottom: 8px !important; }
+
+  /* Page 2: larger text + line-height; images full, centered under text */
+  .manifesto {
+    padding: 10px 0 4px !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+  .manifesto-inner { max-width: 100% !important; }
+  .manifesto-inner h2 { font-size: 26px !important; margin-bottom: 8px !important; line-height: 1.2 !important; }
+  .manifesto-body p { font-size: 12.5px !important; margin-bottom: 8px !important; line-height: 1.55 !important; }
+  .manifesto-lead { font-size: 14px !important; margin-bottom: 10px !important; line-height: 1.5 !important; }
+  .manifesto-micro { font-size: 13px !important; margin-top: 6px !important; line-height: 1.5 !important; }
+  .process {
+    padding: 6px 0 8px !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+  .process .section-head { margin-bottom: 8px !important; }
+  .process .section-head h2 { font-size: 20px !important; line-height: 1.25 !important; }
+  .process-row {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 6px !important;
+  }
+  .p-step {
+    padding: 4px 3px !important;
+    text-align: center !important;
+    border-left: none !important;
+  }
+  .p-step:not(:last-child)::before,
+  .p-step:not(:last-child)::after { display: none !important; }
+  .p-num { font-size: 11px !important; display: block !important; margin-bottom: 2px !important; }
+  .p-title { font-size: 11px !important; letter-spacing: .03em !important; line-height: 1.3 !important; }
+  .p-text { font-size: 10px !important; margin-top: 4px !important; line-height: 1.45 !important; }
+
+  .create {
+    padding: 4px 0 8px !important;
+    page-break-before: avoid !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+  }
+  .create .section-head { margin-bottom: 2px !important; text-align: center !important; }
+  .create .section-head h2 { font-size: 18px !important; line-height: 1.25 !important; }
+  .create .section-head .lead { font-size: 11.5px !important; margin-top: 2px !important; line-height: 1.45 !important; }
+  .create-note { font-size: 11px !important; margin: 2px 0 6px !important; text-align: center !important; line-height: 1.45 !important; }
+  .create-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px 10px !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    align-items: start !important;
+    justify-items: center !important;
+  }
+  .create-card:not(:last-child)::before,
+  .create-card:not(:last-child)::after { display: none !important; }
+  .create-card { text-align: center !important; width: 100% !important; }
+  .create-media {
+    aspect-ratio: auto !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    margin: 0 auto !important;
+    background: transparent !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .create-media img {
+    object-fit: contain !important;
+    object-position: center !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 210px !important; /* 131px × 1.6 (+60%) */
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  .create-cap {
+    margin-top: 4px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .create-num { font-size: 10px !important; display: block !important; }
+  .create-card h3 { font-size: 12px !important; margin: 2px 0 !important; text-align: center !important; line-height: 1.3 !important; }
+  .create-card p { font-size: 10.5px !important; text-align: center !important; margin: 0 !important; line-height: 1.4 !important; }
+
+  /* Defeat site mobile breakpoints during print/PDF */
+  @media (max-width: 99999px) {
+    .products-grid { grid-template-columns: 1fr 1fr 1fr !important; }
+    .strip {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      grid-template-columns: none !important;
+    }
+    .founder-grid { grid-template-columns: 1fr !important; }
+    .mentors-grid { grid-template-columns: 1fr 1fr !important; }
+    .create-grid { grid-template-columns: 1fr 1fr !important; }
+    .process-row { grid-template-columns: repeat(5, 1fr) !important; }
+  }
+
+  /* Page 3: products — fill page */
+  .products {
+    padding: 22px 0 26px !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+  .products .section-head { margin-bottom: 20px !important; text-align: center !important; }
+  .products .section-head h2 { font-size: 32px !important; }
+  .products .section-head .lead { font-size: 15px !important; }
+  .products-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 16px !important;
+    align-items: stretch !important;
+  }
+  .product-card {
+    padding: 22px 16px !important;
+    font-size: 12.5px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 210mm !important;
+  }
+  .product-title { font-size: 16px !important; line-height: 1.2 !important; }
+  .product-sub { font-size: 12px !important; margin: 10px 0 !important; }
+  .product-list { gap: 6px !important; margin: 14px 0 !important; flex: 1 !important; }
+  .product-list li { font-size: 12px !important; line-height: 1.4 !important; padding: 4px 0 !important; }
+  .product-result { margin-top: auto !important; padding-top: 14px !important; }
+  .product-result p { font-size: 12px !important; }
+  .product-note { font-size: 11px !important; margin-top: 10px !important; padding: 10px !important; }
+  .product-badge { font-size: 12px !important; padding: 6px 12px !important; }
+  .product-price { font-size: 22px !important; }
+
+  /* Page 4: campaign — 3 images top row, 2 bottom, no crop */
+  .campaign {
+    padding: 18px 0 20px !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+  .campaign .section-head { margin-bottom: 14px !important; text-align: center !important; }
+  .campaign .section-head h2 { font-size: 26px !important; }
+  .strip {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 14px 16px !important;
+  }
+  .strip > div {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    flex: 0 0 calc(33.333% - 12px) !important;
+    width: calc(33.333% - 12px) !important;
+    max-width: calc(33.333% - 12px) !important;
+    box-sizing: border-box !important;
+  }
+  .strip-card {
+    width: 100% !important;
+    aspect-ratio: auto !important;
+    max-height: none !important;
+    height: auto !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+  .strip-card img,
+  .strip-card picture,
+  .strip-card picture img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 175px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  .strip-cap {
+    margin-top: 8px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .strip-head {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2px !important;
+    margin-bottom: 4px !important;
+  }
+  .strip-num { font-size: 22px !important; }
+  .strip-titles { align-items: center !important; text-align: center !important; }
+  .strip-title, .strip-sub, .strip-text {
+    text-align: center !important;
+  }
+  .strip-title { font-size: 11px !important; line-height: 1.2 !important; }
+  .strip-sub { font-size: 9px !important; margin-top: 2px !important; }
+  .strip-text {
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+    margin-top: 4px !important;
+  }
+
+  /* Page 5: founder — photo top, text bottom */
+  .founder {
+    padding: 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+  .founder .wrap {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .founder-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+    min-height: 0 !important;
+  }
+  .founder-portrait {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 145mm !important;
+    aspect-ratio: auto !important;
+    overflow: visible !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    background: transparent !important;
+  }
+  .founder-portrait img {
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 145mm !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  .founder-copy {
+    padding: 22px 24px 28px !important;
+    text-align: center !important;
+  }
+  .founder-copy .eyebrow { font-size: 13px !important; margin-bottom: 10px !important; display: block !important; }
+  .founder-copy p { font-size: 15px !important; margin-bottom: 12px !important; line-height: 1.55 !important; }
+  .founder-copy h2 { font-size: 28px !important; margin-bottom: 14px !important; }
+  .founder-quote {
+    font-size: 18px !important;
+    margin: 16px auto 0 !important;
+    line-height: 1.4 !important;
+    max-width: 42ch !important;
+    text-align: left !important;
+  }
+
+  /* Page 6: mentors 2×2 — full photos on ONE page */
+  .mentors {
+    padding: 10px 0 12px !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+  }
+  .mentors .section-head { margin-bottom: 10px !important; text-align: center !important; }
+  .mentors .section-head h2 { font-size: 26px !important; }
+  .mentors .section-head .lead { font-size: 12px !important; }
+  .mentors-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto auto !important;
+    gap: 10px 14px !important;
+    align-items: stretch !important;
+  }
+  .mentor-card {
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    page-break-inside: avoid !important;
+    height: auto !important;
+  }
+  .mentor-photo {
+    width: 100% !important;
+    height: 78mm !important;
+    aspect-ratio: auto !important;
+    max-height: 78mm !important;
+    flex: none !important;
+    overflow: hidden !important;
+  }
+  .mentor-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 15% !important;
+  }
+  .mentor-body {
+    padding: 8px 10px 10px !important;
+    flex: none !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .mentor-kicker { font-size: 9px !important; align-self: center !important; }
+  .mentor-card h3, .mentor-name { font-size: 18px !important; margin: 4px 0 0 !important; }
+  .mentor-role { font-size: 11px !important; margin-top: 3px !important; }
+  .mentor-card p, .mentor-text { font-size: 10.5px !important; line-height: 1.3 !important; margin: 4px 0 0 !important; }
+
+  /* Page 7: works — fill page */
+  .works {
+    padding: 18px 0 20px !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+  .works .section-head { margin-bottom: 12px !important; text-align: center !important; }
+  .works .section-head h2 { font-size: 28px !important; }
+  .works-case { max-width: 100% !important; }
+  .works-case-head { margin-bottom: 16px !important; text-align: center !important; }
+  .works-case-head h3 { font-size: 32px !important; letter-spacing: .08em !important; margin: 0 !important; }
+  .works-case-brand { font-size: 11px !important; margin-top: 4px !important; }
+  .works-case-tag { font-size: 15px !important; margin-top: 8px !important; }
+  .works-row {
+    display: grid !important;
+    grid-template-columns: 1.3fr .7fr !important;
+    gap: 14px 18px !important;
+    margin-bottom: 16px !important;
+    align-items: center !important;
+    page-break-inside: avoid !important;
+  }
+  .works-case > .works-row:nth-child(even) {
+    grid-template-columns: .7fr 1.3fr !important;
+  }
+  .works-case > .works-row:nth-child(even) .works-row-media { grid-column: 2; grid-row: 1; }
+  .works-case > .works-row:nth-child(even) .works-row-copy { grid-column: 1; grid-row: 1; }
+  .works-row-media {
+    aspect-ratio: auto !important;
+    max-height: none !important;
+    height: 155px !important;
+    overflow: hidden !important;
+  }
+  .works-row-media img { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+  .works-row-num { font-size: 40px !important; }
+  .works-row-copy { text-align: left !important; }
+  .works-row-copy h4 { font-size: 15px !important; max-width: none !important; margin: 0 !important; }
+  .works-row-copy p { font-size: 13px !important; margin-top: 6px !important; }
+  .works-case-foot { margin-top: 14px !important; padding-top: 12px !important; font-size: 11px !important; text-align: center !important; }
+
+  /* Page 8: FAQ + final CTA + community + consultant — fill page */
+  .faq {
+    padding: 24px 0 12px !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+  .faq .section-head { margin-bottom: 16px !important; text-align: center !important; }
+  .faq .section-head h2 { font-size: 32px !important; }
+  .faq-trig {
+    padding: 14px 0 !important;
+    font-size: 16px !important;
+    background: none !important;
+    border: none !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+  .faq-panel { max-height: none !important; overflow: visible !important; display: block !important; }
+  .faq-item.open .faq-panel { max-height: none !important; }
+  .faq-panel p { padding-bottom: 12px !important; font-size: 14px !important; margin: 0 !important; line-height: 1.5 !important; }
+  .final-cta {
+    min-height: 0 !important;
+    padding: 32px 0 !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+  }
+  .final-cta h2 { font-size: 30px !important; margin: 0 !important; text-align: center !important; }
+  .final-cta .lead { font-size: 16px !important; margin-top: 12px !important; text-align: center !important; }
+  .community {
+    padding: 26px 0 !important;
+    page-break-before: avoid !important;
+  }
+  .community-inner { text-align: center !important; }
+  .community-inner h2 { font-size: 24px !important; margin: 0 !important; }
+  .community-list {
+    margin: 18px auto 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px 24px !important;
+    max-width: 680px !important;
+    text-align: left !important;
+  }
+  .community-list li { font-size: 14px !important; padding: 8px 0 !important; }
+
+  .pdf-cta {
+    display: flex !important;
+    justify-content: center;
+    padding: 32px 16px 40px;
+    background: #faf7f2;
+    page-break-before: avoid !important;
+  }
+  .pdf-cta a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 300px;
+    padding: 18px 30px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #faf7f2;
+    background: #241a12;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.12);
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <a href="#top" class="logo">
+    <div class="l1">MARGO</div>
+    <div class="l2">CREATIVE LAB</div>
+  </a>
+  </header>
+
+<main id="top">
+
+  <section class="hero" style="padding:0;">
+    <div class="hero-photo">
+      <picture><source type="image/webp" srcset="../images/hero-wide.webp"><img class="hero-base" src="../images/hero-wide.jpg" alt="Margo Creative Lab — образ коллекции" fetchpriority="high" width="1920" height="1080"></picture>
+    </div>
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="hero.eyebrow">AI × Fashion × Business</span>
+      <h1>MARGO<span class="thin">CREATIVE LAB</span></h1>
+      <p class="hero-manifest" data-i18n="hero.manifest">Практические инструменты для дизайнеров, владельцев ателье и небольших fashion-брендов.</p>
+      <p class="hero-tagline" data-i18n="hero.tagline">От первой идеи и AI-визуализации до продвижения и построения собственного fashion-бизнеса.</p>
+      <div class="hero-consult">
+        <p class="hero-consult-lead" data-i18n="hero.consult.lead">Нужна помощь с выбором следующего шага?</p>
+        <p class="hero-consult-text" data-i18n="hero.consult.text">Поговорите с консультантом по fashion-бизнесу и получите более ясное направление для своих идей, бизнеса или бренда.</p>
+      </div>
+      </div>
+  </section>
+
+  
+
+  <section class="manifesto" id="manifesto">
+    <div class="wrap manifesto-inner">
+      <h2 data-i18n="manifesto.title">Новый язык моды</h2>
+      <p class="manifesto-lead" data-i18n="manifesto.lead">Технологии не заменяют творчество. Они расширяют границы возможного.</p>
+      <div class="manifesto-body">
+        <p data-i18n="manifesto.p1">Раньше идея упиралась в бюджет, производство и время. Эскиз оставался эскизом, потому что до коллекции — месяцы работы ателье. Margo Creative Lab меняет эту логику: с ИИ путь от образа в голове до готовой кампании занимает дни, а не сезоны.</p>
+        <p data-i18n="manifesto.p2">Ты не учишься «работать в нейросети» — ты учишься говорить с ней на языке моды: силуэт, ткань, свет, история.</p>
+        <p class="manifesto-micro" data-i18n="manifesto.micro">Если у тебя есть идея — у тебя уже есть коллекция. Просто она ещё не увидена.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="process.title">От идеи до создания</h2>
+      </div>
+      <div class="process-row">
+        <div class="p-step" data-reveal>
+          <span class="p-num">01</span>
+          <div class="p-title" data-i18n="process.1.title">Идея</div>
+          <p class="p-text" data-i18n="process.1.text">Интуиция. Всё начинается с образа, который пока живёт только в голове.</p>
+        </div>
+        <div class="p-step" data-reveal>
+          <span class="p-num">02</span>
+          <div class="p-title" data-i18n="process.2.title">Форма</div>
+          <p class="p-text" data-i18n="process.2.text">Придай ей форму. Опиши словами, приложи референс — и начни диалог с ИИ.</p>
+        </div>
+        <div class="p-step" data-reveal>
+          <span class="p-num">03</span>
+          <div class="p-title" data-i18n="process.3.title">ИИ</div>
+          <p class="p-text" data-i18n="process.3.text">Развивай и расширяй. Нейросеть предлагает вариации, ты выбираешь направление.</p>
+        </div>
+        <div class="p-step" data-reveal>
+          <span class="p-num">04</span>
+          <div class="p-title" data-i18n="process.4.title">Коллекция</div>
+          <p class="p-text" data-i18n="process.4.text">Создай целый мир. Один образ превращается в цельную линейку.</p>
+        </div>
+        <div class="p-step" data-reveal>
+          <span class="p-num">05</span>
+          <div class="p-title" data-i18n="process.5.title">Кампания</div>
+          <p class="p-text" data-i18n="process.5.text">Покажи её миру. Коллекция становится брендом.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="create">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="create.title">Создай визуальный контент fashion-продукта с AI</h2>
+        <p class="lead" data-i18n="create.lead">Вы приходите с идеей — а с помощью ИИ уходите с визуальным продуктом для продвижения и продаж.</p>
+        <p class="create-note" data-i18n="create.note">Весь путь — от мудборда до кампании — создаётся с ИИ.</p>
+      </div>
+      <div class="create-grid">
+        <article class="create-card" data-reveal="scale">
+          <div class="create-media"><img loading="lazy" decoding="async" src="../images/create-01.jpg" alt="Idea — AI moodboard on a tablet with sketch and look"></div>
+          <div class="create-cap" style="text-align:center;display:flex;flex-direction:column;align-items:center">
+            <span class="create-num">01</span>
+            <h3 data-i18n="create.1.title">Идея</h3>
+            <p data-i18n="create.1.text">ИИ-мудборд, референсы, промпты.</p>
+          </div>
+        </article>
+        <article class="create-card" data-reveal="scale">
+          <div class="create-media"><img loading="lazy" decoding="async" src="../images/create-02.jpg" alt="Creation — building the dress silhouette with AI"></div>
+          <div class="create-cap" style="text-align:center;display:flex;flex-direction:column;align-items:center">
+            <span class="create-num">02</span>
+            <h3 data-i18n="create.2.title">Создание</h3>
+            <p data-i18n="create.2.text">Образ и силуэт с помощью ИИ.</p>
+          </div>
+        </article>
+        <article class="create-card" data-reveal="scale">
+          <div class="create-media"><img loading="lazy" decoding="async" src="../images/create-03.jpg" alt="Campaign — looks by the sea for promotion"></div>
+          <div class="create-cap" style="text-align:center;display:flex;flex-direction:column;align-items:center">
+            <span class="create-num">03</span>
+            <h3 data-i18n="create.3.title">Кампания</h3>
+            <p data-i18n="create.3.text">ИИ-визуалы, съёмки, контент.</p>
+          </div>
+        </article>
+        <article class="create-card" data-reveal="scale">
+          <div class="create-media"><img loading="lazy" decoding="async" src="../images/create-04.jpg" alt="Market — AI visuals of the finished look"></div>
+          <div class="create-cap" style="text-align:center;display:flex;flex-direction:column;align-items:center">
+            <span class="create-num">04</span>
+            <h3 data-i18n="create.4.title">Рынок</h3>
+            <p data-i18n="create.4.text">Готовый продукт с ИИ для продвижения и продаж.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="products.eyebrow">Создай · Упакуй · Построй бизнес</span>
+        <h2 data-i18n="products.title">Три уровня погружения</h2>
+        <p class="lead" data-i18n="products.lead">Начни с бесплатного гида, доведи одну коллекцию до полноценной кампании и построй свой fashion-бизнес.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <article class="product-card" data-reveal>
+          <div class="product-badge product-badge--free" data-i18n="products.free.badge">FREE</div>
+          <div class="product-num">01</div>
+          <h3 class="product-title" data-i18n="products.free.title">Создай свою первую мини-коллекцию с помощью ИИ</h3>
+          <p class="product-sub" data-i18n="products.free.sub">Как из одной идеи создать 5 связанных между собой fashion-образов.</p>
+          <ul class="product-list">
+            <li data-i18n="products.free.li1">Поиск идеи и концепции</li>
+            <li data-i18n="products.free.li2">Разработка направления</li>
+            <li data-i18n="products.free.li3">AI prompts для дизайнера</li>
+            <li data-i18n="products.free.li4">Создание fashion-образов</li>
+            <li data-i18n="products.free.li5">Сборка первой мини-коллекции</li>
+          </ul>
+          <div class="product-result">
+            <span class="product-result-label" data-i18n="products.result">Результат</span>
+            <p data-i18n="products.free.result">Первая AI mini collection и понимание, как использовать AI как инструмент дизайнера.</p>
+          </div>
+          <p class="product-note" data-i18n-html="products.free.note">* Для получения бесплатных материалов в Telegram-боте напишите слово <b>GUIDE</b>.</p>
+          </article>
+
+        <article class="product-card product-card--featured" data-reveal>
+          <div class="product-badge" data-i18n="products.paid.badge">$19</div>
+          <div class="product-num">02</div>
+          <h3 class="product-title" data-i18n="products.paid.title">Одно платье — целая рекламная кампания</h3>
+          <p class="product-sub" data-i18n="products.paid.sub">Как из одного дизайна собрать визуалы, контент и готовую презентацию продукта.</p>
+          <ul class="product-list">
+            <li data-i18n="products.paid.li1">AI-модель на основе твоего дизайна</li>
+            <li data-i18n="products.paid.li2">Разные ракурсы одного образа</li>
+            <li data-i18n="products.paid.li3">Campaign images для бренда</li>
+            <li data-i18n="products.paid.li4">Social-media content</li>
+            <li data-i18n="products.paid.li5">Готовая fashion-история продукта</li>
+          </ul>
+          <div class="product-result">
+            <span class="product-result-label" data-i18n="products.result">Результат</span>
+            <p data-i18n="products.paid.result">Один дизайн превращается в полноценную campaign concept.</p>
+          </div>
+          </article>
+
+        <article class="product-card" data-reveal>
+          <div class="product-badge" data-i18n="products.program.badge">$199</div>
+          <div class="product-num">03</div>
+          <h3 class="product-title" data-i18n="products.program.title">Как построить своё fashion-ателье</h3>
+          <p class="product-sub" data-i18n="products.program.sub">Полная система запуска fashion-бизнеса — пять модулей от идеи до продаж.</p>
+          <ul class="product-list product-list--modules">
+            <li><b data-i18n="products.program.m1">Идея</b><span data-i18n="products.program.m1.sub">концепция, ниша, стиль</span></li>
+            <li><b data-i18n="products.program.m2">Позиционирование</b><span data-i18n="products.program.m2.sub">бренд, аудитория, отличие</span></li>
+            <li><b data-i18n="products.program.m3">Услуги</b><span data-i18n="products.program.m3.sub">продуктовая линейка, цены, формат</span></li>
+            <li><b data-i18n="products.program.m4">Процессы</b><span data-i18n="products.program.m4.sub">производство, организация, управление</span></li>
+            <li><b data-i18n="products.program.m5">Продвижение</b><span data-i18n="products.program.m5.sub">контент, продажи, маркетинг</span></li>
+          </ul>
+          <div class="product-result">
+            <span class="product-result-label" data-i18n="products.result">Результат</span>
+            <p data-i18n="products.program.result">Готовая система запуска своего fashion-ателье.</p>
+          </div>
+          </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="campaign">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="campaign.title">От концепции до рекламной кампании</h2>
+      </div>
+      <div class="strip">
+        <div>
+          <div class="strip-card"><picture><img loading="lazy" decoding="async" src="../images/process-01.jpg" alt="Moodboard: dress sketch, references, fabrics"></picture></div>
+          <div class="strip-cap" style="text-align:center;width:100%">
+            <div class="strip-head" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+              <span class="strip-num">1</span>
+              <div class="strip-titles" style="text-align:center">
+                <div class="strip-title" data-i18n="campaign.1.title" style="text-align:center">Концепция</div>
+                <div class="strip-sub" data-i18n="campaign.1.sub" style="text-align:center">Идея и направление</div>
+              </div>
+            </div>
+            <p class="strip-text" data-i18n="campaign.1.text" style="text-align:center">Мы начинаем с вашей идеи, целей и целевой аудитории. Разрабатываем концепцию, стиль и визуальную концепцию бренда.</p>
+          </div>
+        </div>
+        <div>
+          <div class="strip-card"><picture><img loading="lazy" decoding="async" src="../images/process-02.jpg" alt="Dress on a mannequin in a light atelier"></picture></div>
+          <div class="strip-cap" style="text-align:center;width:100%">
+            <div class="strip-head" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+              <span class="strip-num">2</span>
+              <div class="strip-titles" style="text-align:center">
+                <div class="strip-title" data-i18n="campaign.2.title" style="text-align:center">Создание</div>
+                <div class="strip-sub" data-i18n="campaign.2.sub" style="text-align:center">Дизайн и разработка</div>
+              </div>
+            </div>
+            <p class="strip-text" data-i18n="campaign.2.text" style="text-align:center">Мы создаём продукт: разрабатываем дизайн, подбираем ткани, прорабатываем детали и готовим образ для съёмки и рекламной кампании.</p>
+          </div>
+        </div>
+        <div>
+          <div class="strip-card"><picture><img loading="lazy" decoding="async" src="../images/process-03.jpg" alt="AI visuals and look generation"></picture></div>
+          <div class="strip-cap" style="text-align:center;width:100%">
+            <div class="strip-head" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+              <span class="strip-num">3</span>
+              <div class="strip-titles" style="text-align:center">
+                <div class="strip-title" data-i18n="campaign.3.title" style="text-align:center">AI Продакшн</div>
+                <div class="strip-sub" data-i18n="campaign.3.sub" style="text-align:center">Визуалы и контент</div>
+              </div>
+            </div>
+            <p class="strip-text" data-i18n="campaign.3.text" style="text-align:center">Мы создаём профессиональные AI-визуалы, фото и видео, которые передают атмосферу бренда и подчёркивают уникальность коллекции.</p>
+          </div>
+        </div>
+        <div>
+          <div class="strip-card"><picture><img loading="lazy" decoding="async" src="../images/process-04.jpg" alt="Final advertising campaign by the sea"></picture></div>
+          <div class="strip-cap" style="text-align:center;width:100%">
+            <div class="strip-head" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+              <span class="strip-num">4</span>
+              <div class="strip-titles" style="text-align:center">
+                <div class="strip-title" data-i18n="campaign.4.title" style="text-align:center">Рекламная кампания</div>
+                <div class="strip-sub" data-i18n="campaign.4.sub" style="text-align:center">Готовые визуалы</div>
+              </div>
+            </div>
+            <p class="strip-text" data-i18n="campaign.4.text" style="text-align:center">Вы получаете полный набор визуальных материалов для рекламной кампании: имиджевые фото, подвижный контент, баннеры и вариации для разных каналов.</p>
+          </div>
+        </div>
+        <div>
+          <div class="strip-card"><picture><img loading="lazy" decoding="async" src="../images/process-05.jpg" alt="Promotion and social media"></picture></div>
+          <div class="strip-cap" style="text-align:center;width:100%">
+            <div class="strip-head" style="display:flex;flex-direction:column;align-items:center;text-align:center">
+              <span class="strip-num">5</span>
+              <div class="strip-titles" style="text-align:center">
+                <div class="strip-title" data-i18n="campaign.5.title" style="text-align:center">Продвижение</div>
+                <div class="strip-sub" data-i18n="campaign.5.sub" style="text-align:center">Публикация и результат</div>
+              </div>
+            </div>
+            <p class="strip-text" data-i18n="campaign.5.text" style="text-align:center">Контент готов к использованию на сайте, в социальных сетях и рекламных каналах. Мы помогаем вам привлечь внимание, повысить узнаваемость бренда и увеличить продажи.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder" id="founder">
+    <div class="wrap founder-grid">
+      <div class="founder-portrait" data-reveal="left">
+        <picture><img loading="lazy" decoding="async" src="../images/margo.jpg" alt="Марго — основатель Creative Lab"></picture>
+      </div>
+      <div class="founder-copy" data-reveal="right">
+        <span class="eyebrow" data-i18n="nav.margo">О Марго</span>
+        <h2 data-i18n="founder.title">Креативный директор и основатель лаборатории</h2>
+        <p data-i18n="founder.p1">Марго работает на стыке моды и генеративных технологий: от индивидуальных капсульных коллекций до рекламных кампаний, полностью собранных при помощи ИИ.</p>
+        <p data-i18n="founder.p2">Верит, что нейросеть — не замена дизайнеру, а новый инструмент в его руках, такой же, как когда-то стала швейная машина.</p>
+        <div class="founder-quote" data-i18n="founder.quote">«Технологии не спрашивают, есть ли у тебя ателье. Они спрашивают, есть ли у тебя идея.»</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mentors" id="mentors">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="mentors.eyebrow">Команда MARGO Creative Lab</span>
+        <h2 data-i18n="mentors.title">Менторы программы</h2>
+        <p class="lead" data-i18n="mentors.lead">Четыре взгляда на fashion-бизнес: стратегия, маркетинг, креатив и предпринимательский опыт.</p>
+      </div>
+      <div class="mentors-grid">
+        <article class="mentor-card" data-reveal>
+          <div class="mentor-photo"><img src="../images/mentor-margo.jpg" alt="Margo — Founder &amp; Fashion Business Mentor" loading="lazy" decoding="async"></div>
+          <div class="mentor-body">
+            <span class="mentor-kicker" data-i18n="mentors.kicker">Mentor</span>
+            <h3 class="mentor-name">Margo</h3>
+            <p class="mentor-role" data-i18n="mentors.margo.role">Founder & Fashion Business Mentor</p>
+            <p class="mentor-text" data-i18n="mentors.margo.text">Видение проекта, fashion-бизнес, стратегия, предпринимательский опыт и общая методология MARGO Creative Lab.</p>
+          </div>
+        </article>
+        <article class="mentor-card" data-reveal>
+          <div class="mentor-photo"><img src="../images/mentor-kendra.jpg" alt="Kendra — Business Strategy Mentor" loading="lazy" decoding="async"></div>
+          <div class="mentor-body">
+            <span class="mentor-kicker" data-i18n="mentors.kicker">Mentor</span>
+            <h3 class="mentor-name">Kendra</h3>
+            <p class="mentor-role" data-i18n="mentors.kendra.role">Business Strategy Mentor</p>
+            <p class="mentor-text" data-i18n="mentors.kendra.text">Бизнес-модель, позиционирование, структура, рост, продажи и коммерческая логика.</p>
+          </div>
+        </article>
+        <article class="mentor-card" data-reveal>
+          <div class="mentor-photo"><img src="../images/mentor-ava.jpg" alt="Ava — Marketing &amp; Content Mentor" loading="lazy" decoding="async"></div>
+          <div class="mentor-body">
+            <span class="mentor-kicker" data-i18n="mentors.kicker">Mentor</span>
+            <h3 class="mentor-name">Ava</h3>
+            <p class="mentor-role" data-i18n="mentors.ava.role">Marketing & Content Mentor</p>
+            <p class="mentor-text" data-i18n="mentors.ava.text">Контент-стратегия, продвижение, social media, AI-инструменты для маркетинга и коммуникация с аудиторией.</p>
+          </div>
+        </article>
+        <article class="mentor-card" data-reveal>
+          <div class="mentor-photo"><img src="../images/mentor-leya.jpg" alt="Leya — Creativity &amp; Brand Mentor" loading="lazy" decoding="async"></div>
+          <div class="mentor-body">
+            <span class="mentor-kicker" data-i18n="mentors.kicker">Mentor</span>
+            <h3 class="mentor-name">Leya</h3>
+            <p class="mentor-role" data-i18n="mentors.leya.role">Creativity & Brand Mentor</p>
+            <p class="mentor-text" data-i18n="mentors.leya.text">Креативная концепция, бренд, визуальная идея, storytelling, коллекции и подача продукта.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="works" id="works">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="works.title">Работы лаборатории</h2>
+      </div>
+      <div class="works-case">
+        <div class="works-case-head" data-reveal>
+          <h3>MARGO ATELIER</h3>
+          <p class="works-case-brand">Brand project by Margo Creative Lab</p>
+          <p class="works-case-tag" data-i18n="works.case.tag">От идеи и тканей — до вдохновляющей кампании</p>
+        </div>
+
+        <article class="works-row" data-reveal>
+          <div class="works-row-media">
+            <picture><img loading="lazy" decoding="async" src="../images/work-case-01.jpg" alt="Coast, sketch and the card Inspired by the Atlantic"></picture>
+          </div>
+          <div class="works-row-copy">
+            <span class="works-row-num">01</span>
+            <h4 data-i18n="works.case.1.title">Бренд и вдохновение</h4>
+            <p data-i18n="works.case.1.text">Океан, свет и женственность.</p>
+          </div>
+        </article>
+
+        <article class="works-row" data-reveal>
+          <div class="works-row-media">
+            <picture><img loading="lazy" decoding="async" src="../images/work-case-02.jpg" alt="Silk, lace, pearls and a dress sketch"></picture>
+          </div>
+          <div class="works-row-copy">
+            <span class="works-row-num">02</span>
+            <h4 data-i18n="works.case.2.title">Продукт и концепция</h4>
+            <p data-i18n="works.case.2.text">Коллекция, ткани, детали и силуэты.</p>
+          </div>
+        </article>
+
+        <article class="works-row" data-reveal>
+          <div class="works-row-media">
+            <picture><img loading="lazy" decoding="async" src="../images/work-case-03.jpg" alt="Campaign look in a lace dress at sunset by the sea"></picture>
+          </div>
+          <div class="works-row-copy">
+            <span class="works-row-num">03</span>
+            <h4 data-i18n="works.case.3.title">AI-визуалы и кампания</h4>
+            <p data-i18n="works.case.3.text">Атмосферные фото и видео для коллекции.</p>
+          </div>
+        </article>
+
+        <article class="works-row" data-reveal>
+          <div class="works-row-media">
+            <picture><img loading="lazy" decoding="async" src="../images/work-case-04.jpg" alt="Phone, stills and finished content for Margo Atelier"></picture>
+          </div>
+          <div class="works-row-copy">
+            <span class="works-row-num">04</span>
+            <h4 data-i18n="works.case.4.title">Готовый контент и результат</h4>
+            <p data-i18n="works.case.4.text">Материалы для соцсетей, сайта и рекламы.</p>
+          </div>
+        </article>
+
+        <p class="works-case-foot">Beautiful ideas take shape · Margo Creative Lab</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 data-i18n="faq.title">Остались вопросы?</h2>
+      </div>
+      <div class="faq-wrap" id="faqList">
+        <div class="faq-item open">
+          <button type="button" class="faq-trig" aria-expanded="true"><span data-i18n="faq.q1">Нужен ли опыт в дизайне или ИИ?</span><span class="plus"></span></button>
+          <div class="faq-panel"><p data-i18n="faq.a1">Нет. Часть участников приходит из моды, часть — из технологий. Программа строится так, чтобы обе стороны говорили на одном языке уже к третьему дню.</p></div>
+        </div>
+        <div class="faq-item open">
+          <button type="button" class="faq-trig" aria-expanded="true"><span data-i18n="faq.q2">Какие инструменты понадобятся?</span><span class="plus"></span></button>
+          <div class="faq-panel"><p data-i18n="faq.a2">Ноутбук и доступ в интернет. Список конкретных сервисов и как их подключить — присылаем после записи.</p></div>
+        </div>
+        <div class="faq-item open">
+          <button type="button" class="faq-trig" aria-expanded="true"><span data-i18n="faq.q3">Это про генерацию картинок или про реальный продукт?</span><span class="plus"></span></button>
+          <div class="faq-panel"><p data-i18n="faq.a3">Про продукт. Картинка — только первый шаг; цель — собранная кампания или коллекция, которую можно показывать.</p></div>
+        </div>
+        <div class="faq-item open">
+          <button type="button" class="faq-trig" aria-expanded="true"><span data-i18n="faq.q4">Можно ли прийти со своим проектом?</span><span class="plus"></span></button>
+          <div class="faq-panel"><p data-i18n="faq.a4">Да, особенно на форматы «Наставничество» и «Эксперименты» — они строятся вокруг твоей идеи.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="side-img left">
+      <picture><source type="image/webp" srcset="../images/hero.webp"><img loading="lazy" decoding="async" src="../images/hero.jpg" alt=""></picture>
+    </div>
+    <div class="side-img right">
+      <picture><source type="image/webp" srcset="../images/cta-arch.webp"><img loading="lazy" decoding="async" src="../images/cta-arch.jpg" alt=""></picture>
+    </div>
+    <div class="wrap">
+      <h2 data-i18n="cta.title">Создай то, чего ещё не существует.</h2>
+      <p class="lead" data-i18n="cta.lead">Преврати своё воображение в реальность.</p>
+      </div>
+  </section>
+
+  <section class="community">
+    <div class="wrap community-inner">
+      <span class="eyebrow" data-i18n="community.eyebrow">Telegram MARGO Creative Lab</span>
+      <h2 data-i18n="community.title">Хотите больше практических материалов по AI, Fashion и Business?</h2>
+      <ul class="community-list">
+        <li data-i18n="community.li1">AI-инструменты и практические уроки</li>
+        <li data-i18n="community.li2">Fashion-кейсы и разборы</li>
+        <li data-i18n="community.li3">Идеи для коллекций</li>
+        <li data-i18n="community.li4">Новости и анонсы новых продуктов</li>
+      </ul>
+      </div>
+  </section>
+
+
+<section class="pdf-cta">
+  <a href="https://t.me/startatelier_bot">Обратиться к консультанту</a>
+</section>
+
+</main>
+
+<style>
+@media (max-width:99999px){
+  .products-grid{grid-template-columns:1fr 1fr 1fr!important}
+  .strip{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;grid-template-columns:none!important}
+  .strip>div{flex:0 0 calc(33.333% - 12px)!important;width:calc(33.333% - 12px)!important;max-width:calc(33.333% - 12px)!important}
+  .strip-card img,.strip-card picture img{height:auto!important;max-height:175px!important;object-fit:contain!important;width:100%!important}
+  .founder-grid{grid-template-columns:1fr!important}
+  .founder-portrait{width:100%!important;max-width:100%!important;height:auto!important;max-height:145mm!important;overflow:visible!important;display:flex!important;justify-content:center!important}
+  .founder-portrait img{width:auto!important;max-width:100%!important;height:auto!important;max-height:145mm!important;object-fit:contain!important;display:block!important;margin:0 auto!important}
+  .mentors-grid{grid-template-columns:1fr 1fr!important;grid-template-rows:auto auto!important}
+  .create-grid{grid-template-columns:1fr 1fr!important}
+  .process-row{grid-template-columns:repeat(5,1fr)!important}
+  .create-cap,.create-card,.create-card h3,.create-card p,.create-num{text-align:center!important}
+  .strip-cap,.strip-title,.strip-sub,.strip-text,.strip-num{text-align:center!important}
+  .strip-head{display:flex!important;flex-direction:column!important;align-items:center!important}
+  .mentor-photo{height:78mm!important;max-height:78mm!important;aspect-ratio:auto!important;flex:none!important}
+  .mentors,.mentors-grid,.mentor-card{page-break-inside:avoid!important;break-inside:avoid-page!important}
+  .product-card{min-height:200mm!important}
+  .works-row-media{height:165px!important;max-height:none!important}
+  .hero-consult{display:none!important}
+  .create-media{height:auto!important;max-height:none!important;overflow:visible!important;display:flex!important;justify-content:center!important}
+  .create-media img{height:auto!important;max-height:210px!important;object-fit:contain!important;width:100%!important;display:block!important;margin:0 auto!important}
+  .founder-grid{grid-template-columns:1fr!important}
+}
+</style></body>
+</html>
