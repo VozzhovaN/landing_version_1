@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
-<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/styles.css?v=consult-inline">
 <link rel="preload" as="image" href="../images/hero-wide.jpg">
 <noscript><style>[data-reveal]{opacity:1!important;transform:none!important}</style></noscript>
 
@@ -26,7 +26,8 @@
     print-color-adjust: exact !important;
   }
   header, footer, .burger, .mobile-nav, .skip-link, #back-to-top, #scroll-progress,
-  .lang-switch, .hero-actions, .consult-modal, .consult-modal-panel, .consult-modal-backdrop,
+  .lang-switch, .hero-actions, .hero-consult-wrap, .consult-inline,
+  .consult-modal, .consult-modal-panel, .consult-modal-backdrop,
   #consultModal, .btn, .product-cta, .faq-trig .plus, .final-cta .side-img {
     display: none !important;
   }
@@ -226,7 +227,8 @@
   .product-title { font-size: 16px !important; line-height: 1.2 !important; }
   .product-sub { font-size: 12px !important; margin: 10px 0 !important; }
   .product-list { gap: 6px !important; margin: 14px 0 !important; flex: 1 !important; }
-  .product-list li { font-size: 12px !important; line-height: 1.4 !important; padding: 4px 0 !important; }
+  .product-list li { font-size: 12px !important; line-height: 1.4 !important; padding: 4px 0 !important; padding-left: 0 !important; }
+  .product-list li::before { display: none !important; content: none !important; }
   .product-result { margin-top: auto !important; padding-top: 14px !important; }
   .product-result p { font-size: 12px !important; }
   .product-note { font-size: 11px !important; margin-top: 10px !important; padding: 10px !important; }
@@ -488,7 +490,8 @@
     max-width: 680px !important;
     text-align: left !important;
   }
-  .community-list li { font-size: 14px !important; padding: 8px 0 !important; }
+  .community-list li { font-size: 14px !important; padding: 8px 0 !important; padding-left: 0 !important; }
+  .community-list li::before { display: none !important; content: none !important; }
 
   .pdf-cta {
     display: flex !important;
@@ -541,9 +544,8 @@
         <p class="hero-consult-text" data-i18n="hero.consult.text">Поговорите с консультантом по fashion-бизнесу и получите более ясное направление для своих идей, бизнеса или бренда.</p>
       </div>
       </div>
+    </div>
   </section>
-
-  
 
   <section class="manifesto" id="manifesto">
     <div class="wrap manifesto-inner">
